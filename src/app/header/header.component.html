@@ -1,0 +1,17 @@
+<header>
+    <div class="container">
+        <button class="btn-toggle" (click)="showMenu = !showMenu">
+            <span class="hamburger"></span>
+        </button>
+
+        <img src="/assets/logo.svg" height="50px">
+        <nav class="nav" [ngClass]="{'show' : showMenu}">
+            <ul class="menu">
+                <li class="menu-item"><a href="">About</a></li>
+                <li class="menu-item"><a href="">Products</a></li>
+                <li class="menu-item"><a href="">Clients</a></li>
+                <li class="menu-item"><a href="">Infrastructure</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

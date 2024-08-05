@@ -1,0 +1,6 @@
+@use "../../../public/assets/variables.scss";
+
+.footer {
+    height: 300px;
+    background: darken(variables.$primary, 20%);
+}
