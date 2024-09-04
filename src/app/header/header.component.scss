@@ -9,6 +9,10 @@ header {
     animation-range: exit 110%;
     padding: 0.5rem 0;
     z-index: 10;
+    text-shadow: 0 0 5px prim, 0 0 10px variables.$primary, 0 0 15px variables.$primary ;
+    transition: color 0.4s ease;
+
+    animation: pulse 2s infinite;
 
     .nav {
         opacity: 0;
@@ -25,6 +29,8 @@ header {
                 a {
                     text-decoration: none;
                 }
+
+               
             }
         }
 
@@ -33,6 +39,98 @@ header {
             height: auto;
         }
     }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background-color: variables.$primary;
+        transition: all 0.3s ease;
+      }
+      
+      &:hover::before {
+        width: 100%;
+        left: 0;
+      }
+      &:hover {
+        color: variables.$primary;
+      }
+
+      &:hover {
+        transform: rotateY(15deg) rotateX(10deg);
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        transition: all 0.4s ease;
+        background: linear-gradient(90deg, variables.$primary, variables.$primary);
+      }
+    
+      &::before {
+        width: 100%;
+        height: 2px;
+        top: 0;
+        left: 0;
+      }
+    
+      &::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
+    
+      &:hover::before {
+        top: 100%;
+      }
+    
+      &:hover::after {
+        right: 100%;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #007bff;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease 0.2s; /* Delay the animation */
+      }
+    
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    
+      &:hover {
+        color: #007bff;
+      }
+    
+
+
+        //pulse animation
+       
+        &:hover {
+            color: #007bff;
+          }
+
+          @keyframes pulse {
+            0%, 100% {
+              text-shadow: 0 0 5px variables.$primary, 0 0 10px variables.$primary, 0 0 15px variables.$primary;
+            }
+            50% {
+              text-shadow: 0 0 10px variables.$primary, 0 0 20px variables.$primary, 0 0 30px variables.$primary;
+            }
+        }
 
     @media (min-width : variables.$bp-md) {
         .container {
@@ -94,15 +192,16 @@ header {
 
     }
 
+    @keyframes header-animation {
+      to {
+          position: fixed;
+          top: 0;
+          background-color: white;
+      }
+  }
+
     @media (min-width : variables.$bp-md) {
         display: none;
     }
 }
 
-@keyframes header-animation {
-    to {
-        position: fixed;
-        top: 0;
-        background-color: white;
-    }
-}
