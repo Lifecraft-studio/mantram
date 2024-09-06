@@ -1,0 +1,4 @@
+root: C:\Users\rocks\OneDrive\Documents\Angular_Playground\mantram-main 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none

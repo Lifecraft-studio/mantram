@@ -1,108 +1,131 @@
 @use "../../../public/assets/variables.scss";
 
 header {
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    animation: header-animation 0.5s linear forwards;
-    animation-timeline: view();
-    animation-range: exit 110%;
-    padding: 0.5rem 0;
-    z-index: 10;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  animation: header-animation 0.5s linear forwards;
+  animation-timeline: view();
+  animation-range: exit 110%;
+  padding: 0.5rem 0;
+  z-index: 10;
 
-    .nav {
-        opacity: 0;
-        background: #fff;
-        height: 0;
+  .nav {
+    opacity: 0;
+    background: #fff;
+    height: 0;
 
-        .menu {
-            list-style: none;
-            padding: 0;
+    .menu {
+      list-style: none;
+      padding: 0;
 
-            .menu-item {
-                cursor: pointer;
+      .menu-item {
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        transition: color 0.3s ease, transform 0.3s ease;
 
-                a {
-                    text-decoration: none;
-                }
-            }
-        }
-
-        &.show {
-            opacity: 1;
-            height: auto;
-        }
-    }
-
-    @media (min-width : variables.$bp-md) {
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            justify-content: space-between;
-            font-size: 1.5rem;
-
-            .nav {
-                opacity: 1;
-                height: auto;
-                background: transparent;
-
-                .menu {
-                    display: flex;
-                    gap: 1rem;
-                }
-            }
-        }
-    }
-}
-
-.btn-toggle {
-    position: absolute;
-    left: 0;
-    height: 38px;
-    width: 38px;
-    border-radius: 50%;
-    border: 0;
-    cursor: pointer;
-
-    .hamburger {
-        width: 25px;
-        height: 3px;
-        display: block;
-        background-color: variables.$primary;
-        margin: 0 auto;
-
-        &::after {
-            content: '';
-            width: 100%;
-            height: 100%;
-            display: block;
-            background-color: variables.$primary;
-            position: relative;
-            top: 3px;
+        a {
+          text-decoration: none;
+          color: inherit;
         }
 
         &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            display: block;
-            background-color: variables.$primary;
-            position: relative;
-            top: -6px;
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: variables.$primary;
+          transition: width 0.4s ease;
         }
 
+        &:hover::before {
+          width: 100%;
+        }
+
+        &:hover {
+          color: variables.$primary;
+          transform: translateY(-2px); /* Slight lift on hover */
+        }
+      }
     }
 
-    @media (min-width : variables.$bp-md) {
-        display: none;
+    &.show {
+      opacity: 1;
+      height: auto;
     }
+  }
+
+  @media (min-width: variables.$bp-md) {
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      justify-content: space-between;
+      font-size: 1.5rem;
+
+      .nav {
+        opacity: 1;
+        height: auto;
+        background: transparent;
+
+        .menu {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+    }
+  }
 }
 
-@keyframes header-animation {
+.btn-toggle {
+  position: absolute;
+  left: 0;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+
+  .hamburger {
+    width: 25px;
+    height: 3px;
+    display: block;
+    background-color: variables.$primary;
+    margin: 0 auto;
+
+    &::after,
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: variables.$primary;
+    }
+
+    &::after {
+      position: relative;
+      top: 3px;
+    }
+
+    &::before {
+      position: relative;
+      top: -6px;
+    }
+  }
+
+  @keyframes header-animation {
     to {
-        position: fixed;
-        top: 0;
-        background-color: white;
+      position: fixed;
+      top: 0;
+      background-color: white;
     }
+  }
+
+  @media (min-width: variables.$bp-md) {
+    display: none;
+  }
 }
+

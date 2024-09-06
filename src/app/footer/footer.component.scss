@@ -1,6 +1,88 @@
+// Aryan Jain-added the footer component dated- 02 september
+
 @use "../../../public/assets/variables.scss";
 
 .footer {
     height: 300px;
     background: darken(variables.$primary, 20%);
 }
+
+.container {                                    
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding-top: 2rem;
+  }
+
+  .footer-column {               
+    flex: 1;
+    min-width: 250px;
+    margin: 0 1rem;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: lighten(variables.$primary, 20%);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #fff;
+
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: color 0.3s;
+
+          &:hover {
+            color: lighten(variables.$primary, 30%);
+          }
+        }
+
+        .social-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .important-links {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
