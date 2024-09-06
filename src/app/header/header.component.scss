@@ -1,6 +1,7 @@
 @use "../../../public/assets/variables.scss";
 
 header {
+<<<<<<< HEAD
   text-align: center;
   position: absolute;
   width: 100%;
@@ -9,6 +10,20 @@ header {
   animation-range: exit 110%;
   padding: 0.5rem 0;
   z-index: 10;
+=======
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    animation: header-animation 0.5s linear forwards;
+    animation-timeline: view();
+    animation-range: exit 110%;
+    padding: 0.5rem 0;
+    z-index: 10;
+    text-shadow: 0 0 5px prim, 0 0 10px variables.$primary, 0 0 15px variables.$primary ;
+    transition: color 0.4s ease;
+
+    animation: pulse 2s infinite;
+>>>>>>> 4c4085cc888a402b4a1a3f79383b5fca23a89146
 
   .nav {
     opacity: 0;
@@ -25,9 +40,164 @@ header {
         color: #fff;
         transition: color 0.3s ease, transform 0.3s ease;
 
+<<<<<<< HEAD
         a {
           text-decoration: none;
           color: inherit;
+=======
+                a {
+                    text-decoration: none;
+                }
+
+               
+            }
+        }
+
+        &.show {
+            opacity: 1;
+            height: auto;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background-color: variables.$primary;
+        transition: all 0.3s ease;
+      }
+      
+      &:hover::before {
+        width: 100%;
+        left: 0;
+      }
+      &:hover {
+        color: variables.$primary;
+      }
+
+      &:hover {
+        transform: rotateY(15deg) rotateX(10deg);
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        transition: all 0.4s ease;
+        background: linear-gradient(90deg, variables.$primary, variables.$primary);
+      }
+    
+      &::before {
+        width: 100%;
+        height: 2px;
+        top: 0;
+        left: 0;
+      }
+    
+      &::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
+    
+      &:hover::before {
+        top: 100%;
+      }
+    
+      &:hover::after {
+        right: 100%;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #007bff;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease 0.2s; /* Delay the animation */
+      }
+    
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    
+      &:hover {
+        color: #007bff;
+      }
+    
+
+
+        //pulse animation
+       
+        &:hover {
+            color: #007bff;
+          }
+
+          @keyframes pulse {
+            0%, 100% {
+              text-shadow: 0 0 5px variables.$primary, 0 0 10px variables.$primary, 0 0 15px variables.$primary;
+            }
+            50% {
+              text-shadow: 0 0 10px variables.$primary, 0 0 20px variables.$primary, 0 0 30px variables.$primary;
+            }
+        }
+
+    @media (min-width : variables.$bp-md) {
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            justify-content: space-between;
+            font-size: 1.5rem;
+
+            .nav {
+                opacity: 1;
+                height: auto;
+                background: transparent;
+
+                .menu {
+                    display: flex;
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.btn-toggle {
+    position: absolute;
+    left: 0;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+
+    .hamburger {
+        width: 25px;
+        height: 3px;
+        display: block;
+        background-color: variables.$primary;
+        margin: 0 auto;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-color: variables.$primary;
+            position: relative;
+            top: 3px;
+>>>>>>> 4c4085cc888a402b4a1a3f79383b5fca23a89146
         }
 
         &::before {
@@ -52,9 +222,22 @@ header {
       }
     }
 
+<<<<<<< HEAD
     &.show {
       opacity: 1;
       height: auto;
+=======
+    @keyframes header-animation {
+      to {
+          position: fixed;
+          top: 0;
+          background-color: white;
+      }
+  }
+
+    @media (min-width : variables.$bp-md) {
+        display: none;
+>>>>>>> 4c4085cc888a402b4a1a3f79383b5fca23a89146
     }
   }
 
@@ -80,6 +263,7 @@ header {
   }
 }
 
+<<<<<<< HEAD
 .btn-toggle {
   position: absolute;
   left: 0;
@@ -129,3 +313,5 @@ header {
   }
 }
 
+=======
+>>>>>>> 4c4085cc888a402b4a1a3f79383b5fca23a89146
