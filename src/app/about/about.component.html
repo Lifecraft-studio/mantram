@@ -1,0 +1,204 @@
+<div class="about-container">
+  <!---  <h1>About Mantram Industries</h1>
+  <p>
+    Mantram Industries is a leading company specializing in [your industry]. Our
+    commitment to quality and customer satisfaction sets us apart.
+  </p>
+  <img class="header-image" src="/assets/hero.jpg" />
+
+  <!---- <h2>Important Links</h2>
+  <ul>
+    <li><a href="/services">Our Services</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+    <li><a href="/careers">Careers</a></li>
+  </ul><-->
+  <img class="header-image" src="/assets/hero.jpg" />
+</div>
+
+<div class="about-us-1">
+  <div class="about-text">
+    <h2>About Us</h2>
+    <h1>Empowering the nextgeneration</h1>
+    <div class="about-buttons">
+      <button class="primary-button" onclick="#hist">Going Forward</button>
+      <button class="primary-button">History</button>
+      <button class="primary-button">FAQs</button>
+    </div>
+  </div>
+  <div class="about-image">
+    <img
+      src="/assets/About-image1.jpg"
+      alt="About image to be displayed here"
+    />
+  </div>
+</div>
+
+<div class="about-us-2">
+  <div class="para">
+    <h2>GOING FORWARD</h2>
+    <p>
+      For more than 130 years, we invented the future of industry and pioneered
+      technologies that spurred<br />
+      world-transforming changes and improved billions of lives<br />
+      Now, we continue that work with even greater focus.
+    </p>
+  </div>
+  <div class="about-2-flex">
+    <div class="history">
+      <h1>SINCE 1892</h1>
+      <p>
+        We dared to imagine a bolder, brighter tomorrow and vowed to build a
+        world that works, for everyone. That promise continues at GE Aerospace,
+        GE Vernova and GE HealthCare as standalone public companies.
+      </p>
+      <div class="links">
+        <a class="linka" href="#"> GE AERospace</a>
+        <a class="linka" href="#"> GE Vernova</a>
+        <a class="linka" href="#"> GE HEALTHCARE</a>
+      </div>
+    </div>
+    <div class="image2">
+      <img src="/assets/About-image-2.jpg" alt="Second image of the page" />
+    </div>
+  </div>
+</div>
+<div id="hist">
+  <div class="about-carousel">
+    <h2 class="history1">History</h2>
+
+    <owl-carousel-o [options]="carouselOptions">
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="/assets/slide1-image.jpg" alt="GE" />
+          <div class="slide-content">
+            <h3>GE</h3>
+            <p>For more than 130 years, we invented the future of industry.</p>
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="/assets/slide1-image.jpg" alt="GE Aerospace" />
+          <div class="slide-content">
+            <h3>GE Aerospace</h3>
+            <p>
+              100+ years of living our purpose to invent the future of flight.
+            </p>
+            ;
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="/assets/slide1-image.jpg" alt="GE Vernova" />
+          <div class="slide-content">
+            <h3>GE Vernova</h3>
+            <p>Building on over 130 years of experience in energy.</p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="/assets/slide1-image.jpg" alt="GE" />
+          <div class="slide-content">
+            <h3>GE</h3>
+            <p>For more than 130 years, we invented the future of industry.</p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="/assets/slide1-image.jpg" alt="GE Vernova" />
+          <div class="slide-content">
+            <h3>GE Vernova</h3>
+            <p>Building on over 130 years of experience in energy.</p>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
+
+<section class="contact-section section">
+  <div class="contact container">
+    <p class="section-heading">Quick Enquiry</p>
+    <form class="w-100">
+      <div class="form-fields">
+        <div class="w-100 wrap-container">
+          <div class="mb-3 w-100 group">
+            <input
+              type="text"
+              id="name"
+              required
+              class="w-100"
+              formControlName="name"
+            />
+            <label for="name" class="form-label">Name</label>
+          </div>
+        </div>
+        <div class="d-flex w-100 wrap-container">
+          <div class="mb-3 w-100 group">
+            <input
+              name="contact"
+              id="contact"
+              required
+              class="w-100"
+              formControlName="contact"
+            />
+            <label for="contact" class="form-label">Contact</label>
+          </div>
+          <div class="mb-3 w-100 group">
+            <input
+              type="email"
+              id="email"
+              required
+              class="w-100"
+              formControlName="email"
+            />
+            <label for="email" class="form-label">Email</label>
+          </div>
+        </div>
+        <div class="d-flex w-100 wrap-container">
+          <div class="mb-3 w-100 group">
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="2"
+              class="w-100"
+              required
+              formControlName="message"
+            ></textarea>
+            <label for="message" class="form-label">Message</label>
+          </div>
+        </div>
+      </div>
+      <!-- <p
+        class="text-danger m-0 text-small"
+        *ngIf="contactForm.invalid && contactForm.touched"
+      >
+        Please enter valid details!!
+      </p><-->
+
+      <div class="contact-footer">
+        <!-- <div
+          class="alert alert-dismissible fade show"
+          role="alert"
+          [ngClass]="'alert-' + request.msg[0].severity"
+          *ngIf="request.msg.length"
+        >
+          {{ request.msg[0].summary }}
+        </div>
+        -->
+        <button class="submit-btn" type="submit">
+          <div class="spinner-border" role="status"></div>
+          Enquire
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

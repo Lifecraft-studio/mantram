@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-
+//import { QRCodeModule } from 'angular2-qrcode';  // Import QRCodeModule for the QR code component
 @Component({
   selector: 'app-landing',
   standalone: true,
