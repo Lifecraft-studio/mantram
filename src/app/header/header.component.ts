@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,4 +11,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   showMenu = false;
+
+  isSticky: boolean = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScroll = window.scrollY;
+    this.isSticky = currentScroll > 150;
+  }
 }

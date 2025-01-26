@@ -3,6 +3,8 @@
 
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import '../public/assets/variables.scss';
+
 *,
 *::before,
 *::after {
@@ -13,10 +15,17 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: roboto;
+    src: url(/assets/fonts/roboto.ttf);
+}
+
 body {
     overflow-x: hidden;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    font-family: roboto;
+    background-color: lighten($secondary, 14%);
 }
 
 img,
@@ -60,4 +69,127 @@ h6 {
 
 .w-100 {
     width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $primary;
+}
+
+.section {
+    margin: 6rem auto;
+
+    @media (min-width: $bp-md) {
+        margin: 9rem auto;
+    }
+}
+
+
+.section-heading {
+    text-align: center;
+    font-size: 3rem;
+    color: $primary;
+    margin: 0;
+    margin-bottom: 1.5rem;
+
+    @media (min-width : $bp-sm) and (max-width: $bp-md) {
+        font-size: 2rem;
+    }
+
+    @media (min-width : $bp-md) {
+        margin-bottom: 6rem;
+    }
+}
+
+.article-header {
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 100svh;
+    overflow-x: clip;
+    padding-block: 7rem;
+    margin-block-end: 3rem;
+}
+
+.header-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1 / -1;
+
+}
+
+.header-content {
+    font-size: 1.75rem;
+    text-align: center;
+    max-width: 1000px;
+    padding: 1rem;
+
+    p {
+        color: darken($color: $primary, $amount: 10%);
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    @media (min-width : $bp-md) {
+        font-size: 3rem;
+
+        p {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (min-width : $bp-sm) and (max-width: $bp-md) {
+        font-size: 2rem;
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+.section {
+    margin-bottom: 5rem;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 3rem;
+    color: $primary;
+}
+
+.section-content {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.about-section {
+    .section-content {
+        @media (min-width : $bp-md) {
+            display: flex;
+            gap: 1.5rem;
+
+            .section-1 {
+                width: 40%;
+            }
+
+            .section-2 {
+                width: 55%;
+                text-align: justify;
+            }
+        }
+    }
+}
+
+.highlight-text {
+    color: lighten($primary, 10%);
+    font-size: 1.75rem;
 }
