@@ -45,19 +45,19 @@
 <section class="container section products-section">
   <h2 class="section-heading">Our Products</h2>
   <div class="products">
-    <div class="product-item">
+    <div class="product-item" (click)="routeToProducts('aerial')">
       <img src="assets/products/lt-aerial.png" alt="" />
       <div class="product-name">
         <p>LT Aerial Bunched Cable</p>
       </div>
     </div>
-    <div class="product-item">
+    <div class="product-item" (click)="routeToProducts('transmission')">
       <img src="assets/products/dist-cable.png" alt="" />
       <div class="product-name">
         <p>Distribution & Transmission Conductor</p>
       </div>
     </div>
-    <div class="product-item">
+    <div class="product-item" (click)="routeToProducts('aluminium')">
       <img src="assets/products/lt-aluminium.png" alt="" />
       <div class="product-name">
         <p>LT Aluminium Power Cable</p>
@@ -144,5 +144,3 @@
     </form>
   </div>
 </section>
-
-<app-footer></app-footer>

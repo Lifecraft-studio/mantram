@@ -30,4 +30,8 @@ export class LandingComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  routeToProducts(path : string) {
+    this.router.navigate([`products/${path}`], {relativeTo: this.activatedRoute});
+  }
 }
