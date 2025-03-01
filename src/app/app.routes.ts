@@ -6,6 +6,9 @@ import { ProductsComponent } from './products/products.component';
 import { AerialCableComponent } from './products/aerial-cable/aerial-cable.component';
 import { TransmissionConductorComponent } from './products/transmission-conductor/transmission-conductor.component';
 import { PowerCableComponent } from './products/power-cable/power-cable.component';
+import { AcsrComponent } from './products/transmission-conductor/acsr/acsr.component';
+import { AaaComponent } from './products/transmission-conductor/aaa/aaa.component';
+import { AaComponent } from './products/transmission-conductor/aa/aa.component';
 
 export const routes: Routes = [
 
@@ -13,19 +16,27 @@ export const routes: Routes = [
         path: '', component: LandingComponent, pathMatch: 'full'
     },
     {
-        path:'about' , component:AboutComponent
+        path: 'about', component: AboutComponent
     },
     {
-        path:'products' , component:ProductsComponent, children : 
-        [
-            {
+        path: 'products', component: ProductsComponent, children:
+            [
+                {
 
-                path : 'aerial', component : AerialCableComponent
-            },
-            {
-
-                path : 'aluminium', component : PowerCableComponent 
-            }
-        ]
+                    path: 'aerial', component: AerialCableComponent
+                },
+                {
+                    path: 'transmission', component: TransmissionConductorComponent,
+                },
+                {
+                    path: 'acsr', component: AcsrComponent,
+                },
+                {
+                    path: 'aaa', component: AaaComponent,
+                },
+                {
+                    path: 'aa', component: AaComponent,
+                },
+            ]
     }
 ];

@@ -163,6 +163,14 @@ a {
     color: $primary;
 }
 
+.section-subheading {
+    color: lighten($primary, 20%);
+    text-align: center;
+    font-size: 1.25rem;
+    color: #8b6cc8;
+    font-weight: 500;
+}
+
 .section-content {
     margin: 1rem 0;
     font-size: 1.25rem;

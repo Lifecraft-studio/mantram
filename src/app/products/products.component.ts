@@ -10,7 +10,7 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 })
 export class ProductsComponent {
   childPath = '';
-  product : any;
+  product: any;
 
   products = [
     {
@@ -19,8 +19,23 @@ export class ProductsComponent {
       img: 'assets/aerial-hero.jpg'
     },
     {
-      id: 'aluminium',
+      id: 'transmission',
       name: 'Aluminium Conductor',
+      img: 'assets/aluminium-hero.jpg'
+    },
+    {
+      id: 'acsr',
+      name: 'Stranded Bare Aluminium Conductor Steel Reinforced (ACSR)',
+      img: 'assets/aluminium-hero.jpg'
+    },
+    {
+      id: 'aaa',
+      name: 'AAA',
+      img: 'assets/aluminium-hero.jpg'
+    },
+    {
+      id: 'aa',
+      name: 'AA',
       img: 'assets/aluminium-hero.jpg'
     }
   ]

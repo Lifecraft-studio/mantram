@@ -12,11 +12,24 @@
     animation-range: exit -200px;
 }
 
+.about-section {
+    img {
+        box-shadow: lighten($primary, 20%) 0px 8px 24px;
+        ;
+    }
+}
+
 
 .products-section {
     .product-item {
         position: relative;
         margin-bottom: 1rem;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(1000px);
+        transition: all 0.7s ease-out;
+        transition-delay: 0ms;
+
 
         .product-name {
             position: absolute;
@@ -24,12 +37,31 @@
             width: 100%;
             height: 25%;
             text-align: center;
-            background: lighten($primary, 40%);
             clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.625rem;
+            font-size: 1.25rem;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $primary;
+                opacity: 1;
+                z-index: 0;
+                transition: all 0.2s ease-out;
+            }
+
+            p {
+                position: relative;
+                z-index: 1;
+                color: #fff;
+                margin: 0;
+            }
 
             @media (min-width : $bp-sm) and (max-width: $bp-md) {
                 font-size: 1.5rem;
@@ -37,96 +69,49 @@
         }
 
         img {
+            box-shadow: lighten($primary, 20%) 0px 8px 24px;
+            ;
             width: 100%;
-            opacity: 0;
-            scale: 0.5;
-            animation: fade-in linear forwards;
-            animation-timeline: view();
-            animation-range: entry;
         }
-    }
-}
 
-.mission-section,
-.vision-section {
-    color: #fff;
-    letter-spacing: 1px;
-    padding: 1rem 0;
-    text-align: center;
+        &:hover {
+            .product-name {
+                top: 0;
+                height: 100%;
+                clip-path: none;
+                transition: all 0.2s ease-out;
 
-    .section-content {
+                &::before {
+                    opacity: 0.7;
+                }
 
-        h2 {
-            font-size: 2rem;
-        }
-    }
+                p {
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 2rem;
 
-    .container {
-        @media (min-width : $bp-md) {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-    }
-
-    .section-img {
-        img {
-            max-height: 800px;
-        }
-    }
-}
-
-.mission-section {
-    background: $primary;
-
-    .container {
-        @media (min-width : $bp-md) {
-            .section-content {
-                width: 100%;
-                transform: translateX(-50%);
-                animation: swipeleft 2s ease-in-out forwards;
-                animation-timeline: view();
-                animation-range: entry-crossing 0% contain 60%;
-            }
-
-            .section-img {
-                transform: translateX(50%);
-                animation: swiperight 2s ease-in-out forwards;
-                animation-timeline: view();
-                animation-range: entry-crossing 0% contain 60%;
+                }
             }
         }
     }
 
-
-}
-
-.vision-section {
-    background: $secondary;
-    color: $primary;
-
-    .container {
-        @media (min-width : $bp-md) {
-            display: flex;
-            flex-direction: row-reverse;
-
-            .section-img {
-                transform: translateX(-50%);
-                animation: swipeleft 2s ease-in-out forwards;
-                animation-timeline: view();
-                animation-range: entry-crossing 0% contain 60%;
+    &.show {
+        .product-item {
+            opacity: 1;
+            transform: translateY(0);
+            &:first-child {
+                transition-delay: 0.1s;
             }
-
-            .section-content {
-                width: 100%;
-                transform: translateX(50%);
-                animation: swiperight 2s ease-in-out forwards;
-                animation-timeline: view();
-                animation-range: entry-crossing 0% contain 60%;
+            &:nth-child(2n) {
+                transition-delay: 0.3s;
+            }
+            &:nth-child(3n) {
+                transition-delay: 0.5s;
             }
         }
     }
 }
+
 
 .products {
     @media (min-width : $bp-md) {
@@ -261,16 +246,6 @@
     }
 }
 
-@keyframes swipeleft {
-    0% {
-        transform: translateX(-50%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-
-}
 
 @keyframes swiperight {
     0% {

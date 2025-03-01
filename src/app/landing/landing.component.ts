@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-//import { QRCodeModule } from 'angular2-qrcode';  // Import QRCodeModule for the QR code component
 @Component({
   selector: 'app-landing',
   standalone: true,
@@ -9,9 +8,13 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit, AfterViewInit{
+
+  @ViewChild('product') productEl! : ElementRef;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  
+  
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -22,6 +25,21 @@ export class LandingComponent {
         });
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target); // Stop observing after animation
+        }
+      });
+    }, {
+      threshold: 0.4 // Trigger when 30% of the element is visible
+    });
+
+    observer.observe(this.productEl.nativeElement);
   }
 
   scrollTo(fragment: string): void {

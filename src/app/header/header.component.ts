@@ -1,11 +1,11 @@
 import { NgClass } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -14,9 +14,15 @@ export class HeaderComponent {
 
   isSticky: boolean = false;
 
+  constructor(private router: Router) { }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const currentScroll = window.scrollY;
     this.isSticky = currentScroll > 150;
+  }
+
+  scrollTo(elementId: string) {
+    this.router.navigate([''], { fragment: elementId })
   }
 }
