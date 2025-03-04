@@ -14,5 +14,4 @@ export class TransmissionConductorComponent {
   routeToProducts(path: string) {
     this.router.navigate([`../${path}`], { relativeTo: this.activatedRoute });
   }
-
 }

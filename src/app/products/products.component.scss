@@ -1,0 +1,16 @@
+.article-header {
+    height: auto;
+}
+
+.back-icon {
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1.5rem;
+
+        img {
+            width: 30px;
+        }
+    }
+}

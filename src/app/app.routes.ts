@@ -9,6 +9,8 @@ import { PowerCableComponent } from './products/power-cable/power-cable.componen
 import { AcsrComponent } from './products/transmission-conductor/acsr/acsr.component';
 import { AaaComponent } from './products/transmission-conductor/aaa/aaa.component';
 import { AaComponent } from './products/transmission-conductor/aa/aa.component';
+import { InvestorsComponent } from './investors/investors.component';
+import { InfrastructureComponent } from './infrastructure/infrastructure.component';
 
 export const routes: Routes = [
 
@@ -19,10 +21,15 @@ export const routes: Routes = [
         path: 'about', component: AboutComponent
     },
     {
+        path: 'investors', component: InvestorsComponent
+    },
+    {
+        path: 'infrastructure', component: InfrastructureComponent
+    },
+    {
         path: 'products', component: ProductsComponent, children:
             [
                 {
-
                     path: 'aerial', component: AerialCableComponent
                 },
                 {
@@ -36,6 +43,9 @@ export const routes: Routes = [
                 },
                 {
                     path: 'aa', component: AaComponent,
+                },
+                {
+                    path: '', redirectTo: 'aerial', pathMatch:'full'
                 },
             ]
     }

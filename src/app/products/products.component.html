@@ -1,13 +1,13 @@
-
 <article class="content-grid">
-    <header class="article-header">
-      <div class="header-content">
-        <h1>{{product.name}}</h1>
-      </div>
-      <img class="header-image" [src]="product.img" />
-    </header>
-  </article>
+  <header class="article-header">
+    <div class="header-content">
+      <h1>{{product.name}}</h1>
+    </div>
+    <img class="header-image" [src]="product.img" />
+  </header>
+</article>
 
-  <div class="product-content">
-    <router-outlet></router-outlet>
-  </div>
+<div class="product-content">
+  <p class="container back-icon"><a routerLink="/" [fragment]="'products'">&lt;&lt; Back to products</a></p>
+  <router-outlet></router-outlet>
+</div>

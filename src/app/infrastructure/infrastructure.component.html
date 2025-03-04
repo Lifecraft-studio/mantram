@@ -1,0 +1,15 @@
+<div class="gallery">
+    @for (img of images; track $index) {
+    <div class="image">
+        <img [src]="img" alt="Gallery Image" (click)="openImage(img)">
+    </div>
+    }
+
+</div>
+
+<!-- Lightbox Modal -->
+@if (selectedImage) {
+<div class="lightbox" (click)="closeImage()">
+    <img [src]="selectedImage" alt="Selected Image">
+</div>
+}

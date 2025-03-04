@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -46,7 +46,7 @@ export class ProductsComponent {
 
     if (childRoute) {
       // Subscribe to URL segments
-      childRoute.url.subscribe((segments) => {
+      this.activatedRoute.firstChild?.url.subscribe((segments) => {
         this.childPath = segments.map((segment) => segment.path).join('/');
         this.product = this.products.find(product => product.id === this.childPath);
       });
