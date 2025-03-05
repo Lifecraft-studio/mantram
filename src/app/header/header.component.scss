@@ -54,7 +54,7 @@ header {
         font-size: 2rem;
         padding: 0.5rem;
         text-align: left;
-       
+
         a {
           text-decoration: none;
           color: inherit;
@@ -63,7 +63,7 @@ header {
         &::before {
           content: '';
           position: absolute;
-          bottom: -5px;
+          bottom: 7px;
           left: 0;
           width: 0;
           height: 2px;
@@ -85,6 +85,69 @@ header {
       opacity: 1;
       height: auto;
     }
+
+    .has-submenu>a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      &::after {
+        content:"\25BC";
+        font-size: 16px;
+      }
+    }
+
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      display: none;
+      min-width: 180px;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .submenu-item {
+      font-size: 16px;
+      padding: 5px 15px;
+    }
+
+    .submenu-item a {
+      color: #fff;
+      display: block;
+    }
+
+    .submenu-item a:hover {
+      border-radius: 4px;
+    }
+
+    .has-submenu:hover>.submenu {
+      display: block;
+    }
+
+    .submenu .has-submenu {
+      position: relative;
+    }
+
+    .submenu .has-submenu .submenu {
+      top: 0;
+      left: 100%;
+      margin-left: -10px;
+    }
+
+    .conductor-submenu {
+      display: flex !important;
+      gap: 0.5rem;
+        &::after {
+          content:"\25B6" !important;
+          font-size: 16px;
+        }
+    }
+
+
   }
 
   @media (min-width: $bp-md) {
