@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { AerialCableComponent } from "./aerial-cable/aerial-cable.component";
+import { TransmissionConductorComponent } from "./transmission-conductor/transmission-conductor.component";
+import { AcsrComponent } from "./transmission-conductor/acsr/acsr.component";
+import { AaaComponent } from "./transmission-conductor/aaa/aaa.component";
+import { AaComponent } from "./transmission-conductor/aa/aa.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, AerialCableComponent, TransmissionConductorComponent, AcsrComponent, AaaComponent, AaComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -41,16 +46,13 @@ export class ProductsComponent {
   ]
   constructor(private activatedRoute: ActivatedRoute) { }
   ngOnInit(): void {
-    // Check for the first child route
-    const childRoute = this.activatedRoute.firstChild;
-
-    if (childRoute) {
-      // Subscribe to URL segments
-      this.activatedRoute.firstChild?.url.subscribe((segments) => {
-        this.childPath = segments.map((segment) => segment.path).join('/');
-        this.product = this.products.find(product => product.id === this.childPath);
-      });
-    }
+    this.activatedRoute.params.subscribe(param => {
+      if(param['id']) {
+        this.product = this.products.find(product => product.id === param['id']);
+      } else {
+        this.product = this.products[0];
+      }
+    })
   }
 
 }

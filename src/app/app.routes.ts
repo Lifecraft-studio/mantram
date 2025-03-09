@@ -27,26 +27,9 @@ export const routes: Routes = [
         path: 'infrastructure', component: InfrastructureComponent
     },
     {
-        path: 'products', component: ProductsComponent, children:
-            [
-                {
-                    path: 'aerial', component: AerialCableComponent
-                },
-                {
-                    path: 'transmission', component: TransmissionConductorComponent,
-                },
-                {
-                    path: 'acsr', component: AcsrComponent,
-                },
-                {
-                    path: 'aaa', component: AaaComponent,
-                },
-                {
-                    path: 'aa', component: AaComponent,
-                },
-                {
-                    path: '', redirectTo: 'aerial', pathMatch:'full'
-                },
-            ]
-    }
+        path: 'products/:id', component: ProductsComponent
+    },
+    {
+        path: 'products', redirectTo : 'products/aerial', pathMatch:'full'
+    },
 ];

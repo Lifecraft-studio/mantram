@@ -8,6 +8,21 @@
 </article>
 
 <div class="product-content">
-  <p class="container back-icon"><a routerLink="/" [fragment]="'products'">&lt;&lt; Back to products</a></p>
-  <router-outlet></router-outlet>
+  @switch (product.id) {
+    @case ('aerial') {
+      <app-aerial-cable></app-aerial-cable>
+    }
+    @case ('transmission') {
+      <app-transmission-conductor></app-transmission-conductor>
+    }
+    @case ('acsr') {
+      <app-acsr></app-acsr>
+    }
+    @case ('aaa') {
+      <app-aaa></app-aaa>
+    }
+    @case ('aa') {
+      <app-aa></app-aa>
+    }
+  }
 </div>
