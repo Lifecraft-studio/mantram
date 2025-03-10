@@ -11,6 +11,8 @@ import { AaaComponent } from './products/transmission-conductor/aaa/aaa.componen
 import { AaComponent } from './products/transmission-conductor/aa/aa.component';
 import { InvestorsComponent } from './investors/investors.component';
 import { InfrastructureComponent } from './infrastructure/infrastructure.component';
+import { ContactComponent } from './contact/contact.component';
+import { CareersComponent } from './careers/careers.component';
 
 export const routes: Routes = [
 
@@ -31,5 +33,11 @@ export const routes: Routes = [
     },
     {
         path: 'products', redirectTo : 'products/aerial', pathMatch:'full'
+    },
+    {
+        path: 'contact', component: ContactComponent
+    },
+    {
+        path: 'career', component: CareersComponent
     },
 ];

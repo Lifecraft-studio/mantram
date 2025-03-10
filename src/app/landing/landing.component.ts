@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, viewChild, ViewChild, ViewChildren } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 @Component({
@@ -11,6 +11,9 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 export class LandingComponent implements OnInit, AfterViewInit{
 
   @ViewChild('product') productEl! : ElementRef;
+  @ViewChild('product2') productEl2! : ElementRef;
+  @ViewChild('imageVideo') imageVideoEl! : ElementRef;
+  @ViewChild('counter') counterEl! : ElementRef;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
   
@@ -40,6 +43,9 @@ export class LandingComponent implements OnInit, AfterViewInit{
     });
 
     observer.observe(this.productEl.nativeElement);
+    observer.observe(this.productEl2.nativeElement);
+    observer.observe(this.imageVideoEl.nativeElement);
+    observer.observe(this.counterEl.nativeElement);
   }
 
   scrollTo(fragment: string): void {

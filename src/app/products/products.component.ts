@@ -35,12 +35,12 @@ export class ProductsComponent {
     },
     {
       id: 'aaa',
-      name: 'AAA',
+      name: 'All Aluminum Alloy Conductors (AAA)',
       img: 'assets/aluminium-hero.jpg'
     },
     {
       id: 'aa',
-      name: 'AA',
+      name: 'All Aluminium Conductors (AAC)',
       img: 'assets/aluminium-hero.jpg'
     }
   ]

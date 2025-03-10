@@ -182,15 +182,12 @@ a {
 .about-section {
     .section-content {
         @media (min-width : $bp-md) {
-            display: flex;
             gap: 1.5rem;
-
-            .section-1 {
-                width: 40%;
-            }
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            align-items: start;
 
             .section-2 {
-                width: 55%;
                 text-align: justify;
             }
         }

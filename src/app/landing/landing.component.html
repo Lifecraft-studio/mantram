@@ -15,7 +15,39 @@
   <h2 class="section-heading">About Mantram</h2>
   <div class="section-content">
     <div class="section-1">
-      <img src="assets/about.jpeg" />
+      <div class="heading">
+        <span class="highlight-text"> Premium & Durable </span><br>Wires and cables
+      </div>
+      <div class="highlight-cards" #counter>
+        <div class="card">
+          <div class="card-content">
+            <h2>8+</h2>
+            <p>Years of Industry <br><strong>EXCELLENCE</strong></p>
+          </div>
+
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2>500+</h2>
+            <p>Successful <br><strong>PROJECTS COMPLETED</strong></p>
+          </div>
+
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2>100%</h2>
+            <p>Sustainable & <br><strong>ECO-FRIENDLY</strong></p>
+          </div>
+
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2>ISO & BIS</h2>
+            <p>Certified <br><strong>QUALITY</strong></p>
+          </div>
+
+        </div>
+      </div>
     </div>
     <div class="section-2">
       <p>
@@ -40,6 +72,18 @@
       </p>
     </div>
   </div>
+  <div class="image-video" #imageVideo>
+    <div class="image-section section-1">
+      <img src="assets/about.jpeg" />
+    </div>
+    <div class="image-section section-2">
+      <img src="assets/infrastructure/image 4.jpg" />
+      <div class="overlay">
+        <img src="assets/icons/play-icon.png" alt="" width="50px">
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <section class="container section products-section" id="products" #product>
@@ -60,6 +104,38 @@
   </div>
 </section>
 
+<section class="container section products-section-2" id="products" #product2>
+  <h2 class="section-heading">Our Products</h2>
+  <div class="products">
+    <div class="product-item" (click)="routeToProducts('aerial')">
+      <img src="assets/products/lt-aerial.png" alt="LT XLPE Aerial Bunched Cables" />
+      <div class="product-name">
+        <p>LT Aerial Bunched Cable</p>
+      </div>
+    </div>
+    <div class="product-item product-item__2" (click)="routeToProducts('acsr')">
+      <img src="assets/products/dist-cable.png" alt="Stranded Bare Aluminium Conductor Steel Reinforced" />
+      <div class="product-name">
+        <p>Stranded Bare Aluminium Conductor Steel Reinforced (ACSR)</p>
+      </div>
+    </div>
+  </div>
+  <div class="products">
+    <div class="product-item" (click)="routeToProducts('aa')">
+      <img src="assets/products/AAC.jpg" alt="all aluminium conductor" />
+      <div class="product-name">
+        <p>All Aluminium Conductor (AA)</p>
+      </div>
+    </div>
+    <div class="product-item product-item__2" (click)="routeToProducts('aaa')">
+      <img src="assets/products/aaa.jpeg" alt="all aluminium alloy conductor" />
+      <div class="product-name">
+        <p>All Aluminium Alloy Conductor (AAAC)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="contact-section section">
   <div class="contact container">
     <p class="section-heading">Quick Enquiry</p>
@@ -73,7 +149,7 @@
         </div>
         <div class="d-flex w-100 wrap-container">
           <div class="mb-3 w-100 group">
-            <input name="contact" id="contact" required class="w-100" formControlName="contact" placeholder=""/>
+            <input name="contact" id="contact" required class="w-100" formControlName="contact" placeholder="" />
             <label for="contact" class="form-label">Contact</label>
           </div>
           <div class="mb-3 w-100 group">
@@ -83,8 +159,8 @@
         </div>
         <div class="d-flex w-100 wrap-container">
           <div class="mb-3 w-100 group">
-            <textarea name="message" id="message" cols="30" rows="2" class="w-100" required
-              formControlName="message" placeholder=""></textarea>
+            <textarea name="message" id="message" cols="30" rows="2" class="w-100" required formControlName="message"
+              placeholder=""></textarea>
             <label for="message" class="form-label">Message</label>
           </div>
         </div>
