@@ -93,11 +93,11 @@ a {
     margin-bottom: 1.5rem;
 
     @media (min-width : $bp-sm) and (max-width: $bp-md) {
-        font-size: 2rem;
+        font-size: 0.5rem;
     }
 
     @media (min-width : $bp-md) {
-        margin-bottom: 6rem;
+        margin-bottom: 0.5rem;
     }
 }
 

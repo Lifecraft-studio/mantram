@@ -360,7 +360,6 @@
     }
 }
 
-
 .products {
     @media (min-width : $bp-md) {
         display: flex;
@@ -373,6 +372,7 @@
 }
 
 .contact {
+    //position: fixed;
     // position: relative;
     // display: flex;
     // flex-direction: column;
@@ -467,11 +467,57 @@
 
     //     }
     // }
+    .buttonClass {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        img{
+            width: 50%;
+            height: auto;
+        }
+    }
+    button{
+        cursor: pointer;
+    }
+    .popupFormBackground {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .contactHeading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .close-btn{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        color: #aaaa;
+        font-size: x-large;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .close-btn:hover{
+        color: black;
+    }
 
     form {
         max-width: 600px;
         margin: auto;
-        padding: 2rem;
+        padding: 1rem 2rem 2rem 2rem;
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

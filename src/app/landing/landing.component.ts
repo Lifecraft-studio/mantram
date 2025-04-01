@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, viewChild, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-landing',
   standalone: true,
@@ -8,16 +8,17 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
-export class LandingComponent implements OnInit, AfterViewInit{
+export class LandingComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('product') productEl! : ElementRef;
-  @ViewChild('product2') productEl2! : ElementRef;
-  @ViewChild('imageVideo') imageVideoEl! : ElementRef;
-  @ViewChild('counter') counterEl! : ElementRef;
+  @ViewChild('product') productEl!: ElementRef;
+  @ViewChild('product2') productEl2!: ElementRef;
+  @ViewChild('imageVideo') imageVideoEl!: ElementRef;
+  @ViewChild('counter') counterEl!: ElementRef;
+
+  contactForm: Boolean = false;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
-  
-  
+
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -55,7 +56,7 @@ export class LandingComponent implements OnInit, AfterViewInit{
     }
   }
 
-  routeToProducts(path : string) {
-    this.router.navigate([`products/${path}`], {relativeTo: this.activatedRoute});
+  routeToProducts(path: string) {
+    this.router.navigate([`products/${path}`], { relativeTo: this.activatedRoute });
   }
 }
