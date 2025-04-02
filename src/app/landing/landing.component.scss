@@ -467,20 +467,46 @@
 
     //     }
     // }
-    .buttonClass {
+    .contact-section {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 3rem;
+        background-color: rgba(#ae8eef, 0.1);
+        align-items: anchor-center;
+    }
+
+    img {
+        width: 30rem;
+        height: 28rem;
+        border-radius: 1rem;
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+
+    .contact-content {
+        display: grid;
+        flex-direction: row;
         align-items: center;
         margin: 1rem;
-        img{
-            width: 50%;
-            height: auto;
+
+        button {
+            display: flex;
+            width: fit-content;
+            cursor: pointer;
+            align-items: center;
+            // background-color:#583896 ;
+            // color: white;
+            border-radius: 1rem;
+        }
+
+        .img-icon {
+            // filter: invert(28%) sepia(76%) saturate(3646%) hue-rotate(210deg);
+            width: 2rem;
+            height: 1.2rem;
         }
     }
-    button{
-        cursor: pointer;
-    }
+
     .popupFormBackground {
         position: fixed;
         top: 0;
@@ -494,24 +520,23 @@
         z-index: 1000;
     }
 
-    .contactHeading{
+    .contactHeading {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
-    .close-btn{
-        display: flex;
-        justify-content: end;
-        align-items: end;
+
+    .class-btn {
+        display: inline;
+        margin-left: 30rem;
         color: #aaaa;
         font-size: x-large;
         font-weight: bold;
-        cursor: pointer;
     }
-    
-    .close-btn:hover{
+
+    .class-btn:hover {
         color: black;
+        cursor: pointer;
     }
 
     form {
@@ -624,6 +649,30 @@
             flex-direction: column;
         }
     }
+
+    @media (max-width: 768px) {
+        .contact-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .contact-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        .contact-content {
+            display: block;
+            text-align: center;
+        }
+
+        .contact-content button {
+            width: fit-content;
+        }
+    }
+
 
 }
 

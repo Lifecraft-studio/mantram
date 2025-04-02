@@ -1,3 +1,17 @@
+<div class="bigImage"> 
+    <button (click)="prevImage()" class="left-arrow-btn"><img class="left-arrow-img" src="/assets/icons/left-arrow.svg"></button>
+    @if (!selectedImage) {
+    <div class="lightbox" (click)="closeImage()">
+        <img [src]="images[currentIndex]" alt="Selected Image">
+    </div>
+    }@else{
+    <div class="lightbox" (click)="closeImage()">
+        <img [src]="selectedImage" alt="Selected Image">
+    </div>
+    }
+    <button (click)="nextImage()" class="left-arrow-btn"><img class="right-arrow-img" src="/assets/icons/right-arrow.svg"></button>
+</div>
+
 <div class="gallery">
     @for (img of images; track $index) {
     <div class="image">
@@ -6,10 +20,3 @@
     }
 
 </div>
-
-<!-- Lightbox Modal -->
-@if (selectedImage) {
-<div class="lightbox" (click)="closeImage()">
-    <img [src]="selectedImage" alt="Selected Image">
-</div>
-}

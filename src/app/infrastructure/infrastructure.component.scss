@@ -1,3 +1,32 @@
+.bigImage{
+    margin-left: 15rem;
+    margin-top: 10rem;
+    overflow-x: clip;
+    display: flex;
+    width: 60vw;
+    height: auto;
+    place-items: center;
+}
+
+.left-arrow-img{
+    width: 30px;
+    height: auto; 
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.right-arrow-img{
+    width: 30px;
+    height: auto; 
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.left-arrow-btn{
+    cursor: pointer;
+    align-items: center;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -25,17 +54,14 @@
 
 /* Lightbox Modal */
 .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    position: relative; 
     display: flex;
+    width: 60vw;
+    height: auto;
     align-items: center;
     justify-content: center;
-    z-index: 10001;
 }
+
 
 .lightbox img {
     max-width: 90%;

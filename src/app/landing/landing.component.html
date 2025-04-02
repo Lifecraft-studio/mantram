@@ -133,16 +133,21 @@
 <section class="contact-section section">
   <div class="contact container">
     <p class="section-heading">Quick Enquiry</p>
-    <!-- <img src="/assets/hero.jpg">  -->
-    <div class="buttonClass">
-      <button type="button" (click)="this.contactForm = !this.contactForm">Contact Us</button>
+    <div class="contact-section">
+      <img src="/assets/hero.jpg">
+      <div class="contact-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis enim dolore ratione quia tempore facilis id
+          assumenda alias pariatur iure. Fugit, sint est? Rem eum ducimus, fugit consequuntur odit ipsum.</p>
+        <button type="button" (click)="contactForm = !contactForm">Contact Us <img class="img-icon"
+            src="/assets/icons/arrow.svg"></button>
+      </div>
     </div>
     @if(contactForm){
     <div class="popupFormBackground">
       <div class="popupForm">
         <form class="w-100">
+          <span class="class-btn" (click)="contactForm = !contactForm">&times;</span>
           <div class="form-fields">
-            <span class="close-btn" (click)="this.contactForm = !this.contactForm">&times;</span>
             <h1 class="contactHeading">Contact Us</h1>
             <div class="w-100 wrap-container">
               <div class="mb-3 w-100 group">
