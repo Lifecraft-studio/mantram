@@ -1,15 +1,15 @@
-<div class="bigImage"> 
-    <button (click)="prevImage()" class="left-arrow-btn"><img class="left-arrow-img" src="/assets/icons/left-arrow.svg"></button>
+<div #largeImage class="bigImage"> 
+    <img (click)="prevImage()"  class="left-arrow-img" src="/assets/icons/left-arrow.svg">
     @if (!selectedImage) {
     <div class="lightbox" (click)="closeImage()">
         <img [src]="images[currentIndex]" alt="Selected Image">
     </div>
     }@else{
     <div class="lightbox" (click)="closeImage()">
-        <img [src]="selectedImage" alt="Selected Image">
+        <img [src]="images[currentIndex]" alt="Selected Image">
     </div>
     }
-    <button (click)="nextImage()" class="left-arrow-btn"><img class="right-arrow-img" src="/assets/icons/right-arrow.svg"></button>
+    <img (click)="nextImage()"  class="right-arrow-img" src="/assets/icons/right-arrow.svg">
 </div>
 
 <div class="gallery">

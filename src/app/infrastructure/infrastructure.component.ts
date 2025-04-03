@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ImageModule } from 'primeng/image';
 
 @Component({
@@ -10,6 +10,7 @@ import { ImageModule } from 'primeng/image';
 })
 export class InfrastructureComponent {
   images = Array.from({ length: 12 }, (_, i) => `/assets/infrastructure/image ${i + 1}.jpg`);
+  @ViewChild('largeImage') largeImage!: ElementRef;
 
   selectedImage: string | null = null;
   currentIndex: number = 0;
@@ -17,6 +18,7 @@ export class InfrastructureComponent {
   openImage(imageUrl: string) {
     this.selectedImage = imageUrl;
     this.currentIndex = this.images.indexOf(imageUrl);
+    this.largeImage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   closeImage() {
