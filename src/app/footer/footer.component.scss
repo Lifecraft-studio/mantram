@@ -47,9 +47,9 @@
         align-items: center;
         gap: 0.5rem;
         transition: color 0.3s;
-
         &:hover {
           color: lighten(variables.$primary, 30%);
+          cursor: pointer;
         }
       }
 

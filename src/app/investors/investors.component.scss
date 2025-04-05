@@ -1,4 +1,35 @@
+@import "../../../public/assets/variables.scss";
 .container {
     margin: 10rem;
-    height: 42.3vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.investor-container{
+    display: block;
+    max-width: 400px;
+    margin: 3rem;
+}
+
+
+li{
+    padding: 1rem;
+    border:2px solid $primary;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: $secondary;
+}
+
+.investor-nav{
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.investor-content{
+    display: flex;
+    margin: 2rem;
+    padding: 2rem;
+    width:700px
 }

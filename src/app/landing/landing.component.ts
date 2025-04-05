@@ -60,4 +60,14 @@ export class LandingComponent implements OnInit, AfterViewInit {
   routeToProducts(path: string) {
     this.router.navigate([`products/${path}`], { relativeTo: this.activatedRoute });
   }
+
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+
+playVideo() {
+  const video = this.videoPlayer.nativeElement;
+  video.hidden = false;
+  video.muted = true;
+  video.play();
+}
+
 }

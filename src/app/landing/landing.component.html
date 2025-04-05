@@ -78,9 +78,12 @@
     </div>
     <div class="image-section section-2">
       <img src="assets/infrastructure/image 4.jpg" />
-      <div class="overlay">
-        <img src="assets/icons/play-icon.png" alt="" width="50px">
-      </div>
+      <div class="overlay" (click)="playVideo()">
+        <img src="assets/icons/play-icon.png" alt="Play" />
+        <video #videoPlayer class="video-player" muted controls hidden>
+          <source src="assets/videos/SampleVideo.mp4" type="video/mp4" />
+        </video>
+      </div>      
     </div>
   </div>
 
@@ -157,7 +160,7 @@
             </div>
             <div class="d-flex w-100 wrap-container">
               <div class="mb-3 w-100 group">
-                <input name="contact" id="contact" required class="w-100" formControlName="contact" placeholder="" />
+                <input type="number" name="contact" id="contact" required class="w-100" formControlName="contact" placeholder="" />
                 <label for="contact" class="form-label">Contact</label>
               </div>
               <div class="mb-3 w-100 group">
