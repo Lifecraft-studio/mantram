@@ -37,7 +37,7 @@ header {
   }
 
   .nav {
-    opacity: 0;
+    display: none;
     background: #fff;
     height: 0;
 
@@ -82,7 +82,7 @@ header {
     }
 
     &.show {
-      opacity: 1;
+      display: block;
       height: auto;
     }
 
@@ -161,7 +161,7 @@ header {
       font-size: 1.5rem;
 
       .nav {
-        opacity: 1;
+        display: block;
         height: auto;
         background: transparent;
 

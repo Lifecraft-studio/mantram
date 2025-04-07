@@ -83,29 +83,13 @@
         <video #videoPlayer class="video-player" muted controls hidden>
           <source src="assets/videos/SampleVideo.mp4" type="video/mp4" />
         </video>
-      </div>      
+      </div>
     </div>
   </div>
 
 </section>
 
 <section class="container section products-section" id="products" #product>
-  <h2 class="section-heading">Our Products</h2>
-  <div class="products">
-    <div class="product-item product-item__1" (click)="routeToProducts('aerial')">
-      <div class="product-name">
-        <p>LT Aerial Bunched Cable</p>
-      </div>
-    </div>
-    <div class="product-item product-item__2" (click)="routeToProducts('transmission')">
-      <div class="product-name">
-        <p>Distribution & Transmission Conductor</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container section products-section-2" id="products" #product2>
   <h2 class="section-heading">Our Products</h2>
   <div class="products">
     <div class="product-item  product-item__1" (click)="routeToProducts('aerial')">
@@ -133,72 +117,10 @@
   </div>
 </section>
 
-<section class="contact-section section">
-  <div class="contact container">
-    <p class="section-heading">Quick Enquiry</p>
-    <div class="contact-section">
-      <img src="/assets/hero.jpg">
-      <div class="contact-content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis enim dolore ratione quia tempore facilis id
-          assumenda alias pariatur iure. Fugit, sint est? Rem eum ducimus, fugit consequuntur odit ipsum.</p>
-        <button type="button" (click)="contactForm = !contactForm">Contact Us <img class="img-icon"
-            src="/assets/icons/arrow.svg"></button>
-      </div>
-    </div>
-    @if(contactForm){
-    <div class="popupFormBackground">
-      <div class="popupForm">
-        <form class="w-100">
-          <span class="class-btn" (click)="contactForm = !contactForm">&times;</span>
-          <div class="form-fields">
-            <h1 class="contactHeading">Contact Us</h1>
-            <div class="w-100 wrap-container">
-              <div class="mb-3 w-100 group">
-                <input type="text" id="name" required class="w-100" formControlName="name" placeholder="" />
-                <label for="name" class="form-label">Name</label>
-              </div>
-            </div>
-            <div class="d-flex w-100 wrap-container">
-              <div class="mb-3 w-100 group">
-                <input type="number" name="contact" id="contact" required class="w-100" formControlName="contact" placeholder="" />
-                <label for="contact" class="form-label">Contact</label>
-              </div>
-              <div class="mb-3 w-100 group">
-                <input type="email" id="email" required class="w-100" formControlName="email" placeholder="" />
-                <label for="email" class="form-label">Email</label>
-              </div>
-            </div>
-            <div class="d-flex w-100 wrap-container">
-              <div class="mb-3 w-100 group">
-                <textarea name="message" id="message" cols="30" rows="2" class="w-100" required
-                  formControlName="message" placeholder=""></textarea>
-                <label for="message" class="form-label">Message</label>
-              </div>
-            </div>
-          </div>
-          <!-- <p class="text-danger m-0 text-small" *ngIf="contactForm.invalid && contactForm.touched">Please enter valid
-                        details!!
-                    </p> -->
-          <div class="contact-footer">
-            <!-- <div class="alert alert-dismissible fade show" role="alert" [ngClass]="'alert-'+request.msg[0].severity"
-                      *ngIf="request.msg.length">
-                      {{request.msg[0].summary}}
-                    </div> -->
-            <button class="submit-btn" type="submit">
-              <div class="spinner-border" role="status"></div>
-              Enquire
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    }
-  </div>
-</section>
 
 <section class="solar-energy-section section">
   <div class="container">
-    <h1>Harnessing Solar Energy for a Sustainable Future</h1>
+    <h1 class="section-heading">Harnessing Solar Energy for a Sustainable Future</h1>
     <div class="solar-sections">
       <fieldset class="solar-container">
         <legend>10+</legend>
@@ -218,7 +140,7 @@
 
 <section class="certification-section section">
   <div class="container">
-    <h1>Certificates</h1>
+    <h1 class="section-heading">Certificates</h1>
     <div class="certificates-section">
       <div class="certificates">
         <img src="/assets/hero.jpg">
@@ -233,5 +155,64 @@
         <h3>certificate 3</h3>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="contact-section section">
+  <div class="contact container">
+    <p class="section-heading">Quick Enquiry</p>
+    <div class="contact-section">
+      <img src="/assets/hero.jpg">
+      <div class="contact-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis enim dolore ratione quia tempore facilis id
+          assumenda alias pariatur iure. Fugit, sint est? Rem eum ducimus, fugit consequuntur odit ipsum.</p>
+        <button type="button" (click)="contactForm = !contactForm">Contact Us <img class="img-icon"
+            src="/assets/icons/arrow.svg"></button>
+      </div>
+    </div>
+    @if(contactForm){
+    <div class="popupFormBackground">
+      <div class="popupForm">
+        <form class="w-100">
+          <span class="class-btn" (click)="contactForm = !contactForm">&times;</span>
+          <div class="form-fields">
+            <h1 class="contactHeading">Contact Us</h1>
+            <div class="w-100 group">
+              <input type="text" id="name" required class="w-100" formControlName="name" placeholder="" />
+              <label for="name" class="form-label">Name</label>
+            </div>
+            <div class="w-100 group">
+              <input type="number" name="contact" id="contact" required class="w-100" formControlName="contact"
+                placeholder="" />
+              <label for="contact" class="form-label">Contact</label>
+            </div>
+            <div class="w-100 group">
+              <input type="email" id="email" required class="w-100" formControlName="email" placeholder="" />
+              <label for="email" class="form-label">Email</label>
+            </div>
+            <div class="w-100 group">
+              <textarea name="message" id="message" cols="30" rows="2" class="w-100" required formControlName="message"
+                placeholder=""></textarea>
+              <label for="message" class="form-label">Message</label>
+            </div>
+          </div>
+          <!-- <p class="text-danger m-0 text-small" *ngIf="contactForm.invalid && contactForm.touched">Please enter valid
+                        details!!
+                    </p> -->
+          <div class="contact-footer">
+            <!-- <div class="alert alert-dismissible fade show" role="alert" [ngClass]="'alert-'+request.msg[0].severity"
+                      *ngIf="request.msg.length">
+                      {{request.msg[0].summary}}
+                    </div> -->
+            <button class="submit-btn" type="submit">
+              <div class="spinner-border" role="status"></div>
+              Enquire
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    }
   </div>
 </section>

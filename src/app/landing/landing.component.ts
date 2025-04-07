@@ -12,7 +12,6 @@ import { FooterComponent } from "../footer/footer.component";
 export class LandingComponent implements OnInit, AfterViewInit {
 
   @ViewChild('product') productEl!: ElementRef;
-  @ViewChild('product2') productEl2!: ElementRef;
   @ViewChild('imageVideo') imageVideoEl!: ElementRef;
   @ViewChild('counter') counterEl!: ElementRef;
 
@@ -45,7 +44,6 @@ export class LandingComponent implements OnInit, AfterViewInit {
     });
 
     observer.observe(this.productEl.nativeElement);
-    observer.observe(this.productEl2.nativeElement);
     observer.observe(this.imageVideoEl.nativeElement);
     observer.observe(this.counterEl.nativeElement);
   }
