@@ -14,8 +14,10 @@ export class InfrastructureComponent {
 
   selectedImage: string | null = null;
   currentIndex: number = 0;
+  showImage:Boolean = false;
 
   openImage(imageUrl: string) {
+    this.showImage = !this.showImage;
     this.selectedImage = imageUrl;
     this.currentIndex = this.images.indexOf(imageUrl);
     this.largeImage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
