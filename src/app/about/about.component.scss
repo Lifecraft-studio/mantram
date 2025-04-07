@@ -124,13 +124,19 @@
 }
 
 .certificate {
+
   display: grid;
+  gap: 2rem;
+
+  p{
+      cursor: pointer;
+  }
 
   .certificate-img {
-    text-align: center;
+      text-align: center;
   }
 
   @media (min-width : $bp-md) {
-    grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

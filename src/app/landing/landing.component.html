@@ -80,11 +80,20 @@
       <img src="assets/infrastructure/image 4.jpg" />
       <div class="overlay" (click)="playVideo()">
         <img src="assets/icons/play-icon.png" alt="Play" />
-        <video #videoPlayer class="video-player" muted controls hidden>
-          <source src="assets/videos/SampleVideo.mp4" type="video/mp4" />
-        </video>
       </div>
     </div>
+    @if(showVideoPopup){
+      <div class="backgroundBlur">
+        <div class="popupFormBackground">
+          <div class="popupForm blackBackground">
+            <span class="class-btn" (click)="showVideoPopup = !showVideoPopup">&times;</span>
+            <video class="video-player" autoplay muted controls>
+              <source src="assets/videos/SampleVideo.mp4" muted type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    }
   </div>
 
 </section>
@@ -138,26 +147,27 @@
   </div>
 </section>
 
-<section class="certification-section section">
-  <div class="container">
-    <h1 class="section-heading">Certificates</h1>
-    <div class="certificates-section">
-      <div class="certificates">
-        <img src="/assets/hero.jpg">
-        <h3>certificate 1</h3>
-      </div>
-      <div class="certificates">
-        <img src="/assets/hero.jpg">
-        <h3>certificate 2</h3>
-      </div>
-      <div class="certificates">
-        <img src="/assets/hero.jpg">
-        <h3>certificate 3</h3>
-      </div>
+<section class="container section">
+  <h2 class="section-heading">Our Certificates</h2>
+  <div class="section-content certificate">
+    <div class="certificate-img">
+      <img src="/assets/icon-iso.svg" alt="" height="100">
+      <p><a href="/assets/certificates/(ISO)9001.pdf" target="_blank" rel="noopener noreferrer">(ISO) 9001</a></p>
+    </div>
+    <div class="certificate-img">
+      <img src="/assets/bis-logo.png" alt="" height="100">
+      <p><a href="/assets/certificates/(BIS)EndorsementNo-8200089007.pdf" target="_blank" rel="noopener noreferrer">(BIS)EndorsementNo-8200089007</a></p>
+    </div>
+    <div class="certificate-img">
+      <img src="/assets/bis-logo.png" alt="" height="100">
+      <p><a href="/assets/certificates/(BIS)EndorsementNo-8200062205.pdf" target="_blank" rel="noopener noreferrer">(BIS)EndorsementNo-8200062205</a></p>
+    </div>
+    <div class="certificate-img">
+      <img src="/assets/bis-logo.png" alt="" height="100">
+      <p><a href="/assets/certificates/(BIS)EndorsementNo-8200065809.pdf" target="_blank" rel="noopener noreferrer">(BIS)EndorsementNo-8200065809</a></p>
     </div>
   </div>
 </section>
-
 
 <section class="contact-section section">
   <div class="contact container">
@@ -167,50 +177,56 @@
       <div class="contact-content">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis enim dolore ratione quia tempore facilis id
           assumenda alias pariatur iure. Fugit, sint est? Rem eum ducimus, fugit consequuntur odit ipsum.</p>
-        <button type="button" (click)="contactForm = !contactForm">Contact Us <img class="img-icon"
+        <button type="button" (click)="showContactForm = !showContactForm">Contact Us <img class="img-icon"
             src="/assets/icons/arrow.svg"></button>
       </div>
     </div>
-    @if(contactForm){
-    <div class="popupFormBackground">
-      <div class="popupForm">
-        <form class="w-100">
-          <span class="class-btn" (click)="contactForm = !contactForm">&times;</span>
-          <div class="form-fields">
-            <h1 class="contactHeading">Contact Us</h1>
-            <div class="w-100 group">
-              <input type="text" id="name" required class="w-100" formControlName="name" placeholder="" />
-              <label for="name" class="form-label">Name</label>
+    @if(showContactForm){
+      <!-- using backgroundBlur div for making the entire viewport black with some opacity when we open form -->
+    <div class="backgroundBlur">
+      <!-- popupFormBackground div creates a background which creates a center poistion of the div in the screen size -->
+      <div class="popupFormBackground">
+        <!-- popupForm contains the element which needs to be displaced in popup -->
+         <!-- using whiteBackground for showing different background colors for different elements -->
+        <div class="popupForm whiteBackground">
+          <span class="class-btn" (click)="showContactForm = !showContactForm">&times;</span>
+          <form class="w-100">
+            <div class="form-fields">
+              <h1 class="contactHeading">Contact Us</h1>
+              <div class="w-100 group">
+                <input type="text" id="name" required class="w-100" formControlName="name" placeholder="" />
+                <label for="name" class="form-label">Name</label>
+              </div>
+              <div class="w-100 group">
+                <input type="number" name="contact" id="contact" required class="w-100" formControlName="contact"
+                  placeholder="" />
+                <label for="contact" class="form-label">Contact</label>
+              </div>
+              <div class="w-100 group">
+                <input type="email" id="email" required class="w-100" formControlName="email" placeholder="" />
+                <label for="email" class="form-label">Email</label>
+              </div>
+              <div class="w-100 group">
+                <textarea name="message" id="message" cols="30" rows="2" class="w-100" required formControlName="message"
+                  placeholder=""></textarea>
+                <label for="message" class="form-label">Message</label>
+              </div>
             </div>
-            <div class="w-100 group">
-              <input type="number" name="contact" id="contact" required class="w-100" formControlName="contact"
-                placeholder="" />
-              <label for="contact" class="form-label">Contact</label>
+            <!-- <p class="text-danger m-0 text-small" *ngIf="contactForm.invalid && contactForm.touched">Please enter valid
+                          details!!
+                      </p> -->
+            <div class="contact-footer">
+              <!-- <div class="alert alert-dismissible fade show" role="alert" [ngClass]="'alert-'+request.msg[0].severity"
+                        *ngIf="request.msg.length">
+                        {{request.msg[0].summary}}
+                      </div> -->
+              <button class="submit-btn" type="submit">
+                <div class="spinner-border" role="status"></div>
+                Enquire
+              </button>
             </div>
-            <div class="w-100 group">
-              <input type="email" id="email" required class="w-100" formControlName="email" placeholder="" />
-              <label for="email" class="form-label">Email</label>
-            </div>
-            <div class="w-100 group">
-              <textarea name="message" id="message" cols="30" rows="2" class="w-100" required formControlName="message"
-                placeholder=""></textarea>
-              <label for="message" class="form-label">Message</label>
-            </div>
-          </div>
-          <!-- <p class="text-danger m-0 text-small" *ngIf="contactForm.invalid && contactForm.touched">Please enter valid
-                        details!!
-                    </p> -->
-          <div class="contact-footer">
-            <!-- <div class="alert alert-dismissible fade show" role="alert" [ngClass]="'alert-'+request.msg[0].severity"
-                      *ngIf="request.msg.length">
-                      {{request.msg[0].summary}}
-                    </div> -->
-            <button class="submit-btn" type="submit">
-              <div class="spinner-border" role="status"></div>
-              Enquire
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
     }

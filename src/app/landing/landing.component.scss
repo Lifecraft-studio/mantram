@@ -160,7 +160,7 @@
             img {
                 height: 100%;
                 width: 100%;
-
+                cursor: pointer;
             }
 
             .overlay {
@@ -429,44 +429,19 @@
         }
     }
 
-    .popupFormBackground {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
     .contactHeading {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .class-btn {
-        display: inline;
-        color: #aaaa;
-        font-size: x-large;
-        font-weight: bold;
-    }
-
-    .class-btn:hover {
-        color: black;
-        cursor: pointer;
-    }
-
     form {
         max-width: 600px;
         margin: auto;
         padding: 1rem 2rem 2rem 2rem;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        // background: #fff;
+        // border-radius: 8px;
+        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .form-fields {
@@ -597,6 +572,89 @@
 
 }
 
+//tried non-scrollable functionality when we open a popup form
+
+// body.no-scroll,
+// html.no-scroll {
+//   overflow: hidden !important;
+//   height: 100% !important;
+//   position: fixed !important;
+//   width: 100%;
+// }
+
+.backgroundBlur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+    .popupFormBackground {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        width: auto;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+
+        .whiteBackground {
+            background-color: white;
+
+            span {
+                color: grey;
+            }
+
+            span:hover {
+                color: black;
+            }
+        }
+
+        .blackBackground {
+            background-color: black;
+
+            span {
+                color: #aaaa;
+            }
+
+            span:hover {
+                color: white;
+            }
+        }
+
+        .popupForm {
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 700px;
+        }
+
+        .class-btn {
+            display: inline;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        .class-btn:hover {
+            cursor: pointer;
+        }
+
+        span {
+            cursor: pointer;
+            position: relative;
+            left: 95%
+        }
+    }
+}
+
 .solar-energy-section {
     .container {
         place-items: center;
@@ -623,39 +681,21 @@
     }
 }
 
-.certification-section {
-    .container {
-        place-items: center;
-        color: $primary;
-        gap: 2rem;
+.certificate {
+
+    display: grid;
+    gap: 2rem;
+
+    p{
+        cursor: pointer;
     }
 
-    .certificates-section {
-        @media (min-width : $bp-md) {
-            display: flex;
-            justify-content: space-around;
-            margin: 2rem;
-            flex-wrap: wrap;
-            gap: 2rem;
-
-            .certificates {
-                width: 30%;
-            }
-        }
-
+    .certificate-img {
+        text-align: center;
     }
 
-    .certificates {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        height: auto;
-        margin-bottom: 2rem;
-    }
-
-    h3 {
-        display: flex;
-        justify-content: center;
+    @media (min-width : $bp-md) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
