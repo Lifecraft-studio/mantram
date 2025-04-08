@@ -632,8 +632,10 @@
         .popupForm {
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            width: 700px;
+            padding: 1.5rem;
+            width: 90vw;
+            max-width: 700px;
+            box-sizing: border-box;
         }
 
         .class-btn {
@@ -669,13 +671,39 @@
         gap: 1rem;
     }
 
-    .solar-container {
-        padding: 1rem;
-        border: 1px solid black;
-        border-radius: 1rem;
+    .custom-box {
+        border: 1px solid #ccc;
+        padding: 2rem 1rem 1rem;
+        position: relative;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        flex: 1 1 300px;
+        text-align: center;
 
-        legend {
-            font-size: xx-large;
+        h3 {
+            margin-top: 2rem;
+        }
+    }
+
+    .custom-legend {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 0.5rem;
+        z-index: 0;
+
+        img {
+            display: block;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .solar-sections {
+            flex-direction: column;
+            justify-content: center;
         }
     }
 }
@@ -685,7 +713,7 @@
     display: grid;
     gap: 2rem;
 
-    p{
+    p {
         cursor: pointer;
     }
 

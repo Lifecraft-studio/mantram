@@ -85,7 +85,7 @@
 
 
 .mission-container {
-  display: flex;
+  display: block;
   width: 100%;
   max-width: 1600px;
   margin: auto;
@@ -96,6 +96,7 @@
   .mission {
     width: 100%;
     padding: 2rem;
+    margin: 2rem;
     background-color: #fff;
     filter: drop-shadow(5px -2px 10px #000000);
     display: flex;
@@ -114,12 +115,10 @@
     }
   }
 
-  @media (max-width: $bp-lg) {
-    padding: 1rem;
-  }
-
-  @media (min-width: $bp-sm) And (max-width: $bp-md) {
-    flex-direction: column;
+  @media (max-width: $bp-sm) {
+    .mission {
+      margin: 0px 0px 2rem 0px;;
+    }
   }
 }
 
@@ -128,15 +127,15 @@
   display: grid;
   gap: 2rem;
 
-  p{
-      cursor: pointer;
+  p {
+    cursor: pointer;
   }
 
   .certificate-img {
-      text-align: center;
+    text-align: center;
   }
 
   @media (min-width : $bp-md) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

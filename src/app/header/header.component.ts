@@ -11,7 +11,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   showMenu = false;
-
+  
   isSticky: boolean = false;
 
   constructor(private router: Router) { }

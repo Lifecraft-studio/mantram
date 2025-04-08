@@ -23,11 +23,11 @@ export class ProductsComponent {
       name: 'LT XLPE Aerial Bunched Cables',
       img: 'assets/aerial-hero.jpg'
     },
-    {
-      id: 'transmission',
-      name: 'Aluminium Conductor',
-      img: 'assets/aluminium-hero.jpg'
-    },
+    // {
+    //   id: 'transmission',
+    //   name: 'Aluminium Conductor',
+    //   img: 'assets/aluminium-hero.jpg'
+    // },
     {
       id: 'acsr',
       name: 'Stranded Bare Aluminium Conductor Steel Reinforced (ACSR)',

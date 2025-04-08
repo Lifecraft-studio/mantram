@@ -23,6 +23,13 @@ h1{
     cursor: pointer;
     z-index: 10;
 }
+@media (max-width:$bp-sm){
+    .left-arrow-img,
+    .right-arrow-img {
+        width: 10px;
+        height: 10px;
+    }
+}
 
 .left-arrow-img {
     left: 0.5rem;
@@ -30,11 +37,6 @@ h1{
 
 .right-arrow-img {
     right: 0.5rem;
-}
-
-
-.gallery-container{
-    margin: 2rem 10rem;
 }
 
 .gallery {
@@ -112,7 +114,8 @@ h1{
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 2rem;
-            width: 700px;
+            width: 70vw;
+            max-width: 700px;
 
             .lightbox-container {
                 position: relative;
