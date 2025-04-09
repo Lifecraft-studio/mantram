@@ -1,11 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { FooterComponent } from "../footer/footer.component";
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [FooterComponent, ButtonModule],
+  imports: [ButtonModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
@@ -41,7 +40,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
         }
       });
     }, {
-      threshold: 0.4 // Trigger when 30% of the element is visible
+      threshold: 0.1 // Trigger when 30% of the element is visible
     });
 
     observer.observe(this.productEl.nativeElement);

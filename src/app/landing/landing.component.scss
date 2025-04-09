@@ -299,6 +299,7 @@
             }
 
             p {
+                top: 15px;
                 position: relative;
                 z-index: 1;
                 color: #fff;
@@ -666,6 +667,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        flex-wrap: wrap;
         width: 100%;
         margin: 2rem;
         gap: 1rem;
@@ -679,7 +681,7 @@
         margin-bottom: 2rem;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         max-width: 300px;
-        flex: 1 1 300px;
+        flex: 1 1 270px;
         text-align: center;
 
         h3 {
@@ -697,13 +699,6 @@
 
         img {
             display: block;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        .solar-sections {
-            flex-direction: column;
-            justify-content: center;
         }
     }
 }
