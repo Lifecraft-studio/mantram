@@ -88,6 +88,10 @@ header {
     &.show {
       display: block;
       height: auto;
+      .menu-item,
+      .menu-item a {
+        color: $primary !important;
+      }
     }
 
     .has-submenu>a {
