@@ -1,18 +1,19 @@
 <header [ngClass]="{'is-sticky': isSticky}">
   <div class="container">
-    <button class="btn-toggle" (click)="showMenu = !showMenu">
+    <button class="btn-toggle" [ngClass]="{'active': showMenu, 'sticky': isSticky}" (click)="toggleMenu()">
       <span class="hamburger"></span>
     </button>
     <a href="/"> <img [src]="!isSticky ?  '/assets/logo.svg' : '/assets/logo-white.svg'" height="50px" /> </a>
     <nav class="nav" [ngClass]="{ show: showMenu }">
       <ul class="menu">
-        <li class="menu-item"><a routerLink="about" (click)="showMenu = !showMenu">About</a></li>
-        <li class="menu-item has-submenu"><a>Products</a>
+        <li class="menu-item"><a routerLink="about" (click)="closeMenu()">About</a></li>
+        <li class="menu-item has-submenu">
+          <a (click)="toggleSubmenu($event)">Products</a>
           <ul class="submenu">
-            <li class="submenu-item"><a routerLink="/products/aerial">LT Aerial Cable</a></li>
-            <li class="submenu-item"><a routerLink="aab" routerLink="/products/acsr">ACSR</a></li>
-            <li class="submenu-item"><a routerLink="aac" routerLink="/products/aaa">AAA</a></li>
-            <li class="submenu-item"><a routerLink="aa" routerLink="/products/aa">AA</a></li>
+            <li class="submenu-item"><a routerLink="/products/aerial" (click)="closeMenu()">LT Aerial Cable</a></li>
+            <li class="submenu-item"><a routerLink="/products/acsr" (click)="closeMenu()">ACSR</a></li>
+            <li class="submenu-item"><a routerLink="/products/aaa" (click)="closeMenu()">AAA</a></li>
+            <li class="submenu-item"><a routerLink="/products/aa" (click)="closeMenu()">AA</a></li>
             <!-- <li class="submenu-item has-submenu">
               <a routerLink="conductors" class="conductor-submenu" routerLink="/products/transmission">Conductors</a>
               <ul class="submenu">
@@ -23,10 +24,10 @@
             </li> -->
           </ul>
         </li>
-        <li class="menu-item"><a routerLink="investors" (click)="showMenu = !showMenu">Investors</a></li>
-        <li class="menu-item"><a routerLink="infrastructure" (click)="showMenu = !showMenu">Infrastructure</a></li>
-        <li class="menu-item"><a routerLink="contact" (click)="showMenu = !showMenu">Contact</a></li>
-        <li class="menu-item"><a routerLink="career" (click)="showMenu = !showMenu">Career</a></li>
+        <li class="menu-item"><a routerLink="investors" (click)="closeMenu()">Investors</a></li>
+        <li class="menu-item"><a routerLink="infrastructure" (click)="closeMenu()">Infrastructure</a></li>
+        <li class="menu-item"><a routerLink="contact" (click)="closeMenu()">Contact</a></li>
+        <li class="menu-item"><a routerLink="career" (click)="closeMenu()">Career</a></li>
       </ul>
     </nav>
   </div>
