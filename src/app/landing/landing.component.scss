@@ -134,6 +134,7 @@
         position: relative;
         margin-bottom: 20rem;
 
+
         @media (max-width: $bp-md) {
             grid-template-columns: 1fr;
         }
@@ -246,6 +247,14 @@
             .section-2 {
                 transition-delay: 0.5s;
             }
+        }
+    }
+
+
+    @media (max-width:$bp-sm) {
+        .image-video {
+            margin-top: 0rem;
+            margin-bottom: 0rem;
         }
     }
 
@@ -405,6 +414,10 @@
         border-radius: 1rem;
     }
 
+    h1{
+        font-size: 2rem;
+        margin: 0;
+    }
     p {
         margin-bottom: 2rem;
     }
@@ -420,7 +433,10 @@
             display: flex;
             cursor: pointer;
             align-items: center;
-            border-radius: 1rem;
+            border-radius: 400px;
+            padding: 0.5rem 1.25rem;
+            gap: 1rem;
+            font-size: 1.25rem;
         }
 
         .img-icon {
@@ -438,10 +454,6 @@
     form {
         max-width: 600px;
         margin: auto;
-        padding: 1rem 2rem 2rem 2rem;
-        // background: #fff;
-        // border-radius: 8px;
-        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .form-fields {
@@ -551,7 +563,6 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 1.5rem;
         }
 
         .contact-section img {
@@ -565,22 +576,14 @@
 
             button {
                 margin: auto;
+                padding: 0.5rem 1.25rem;
+                gap:0.25rem;
             }
         }
     }
 
 
 }
-
-//tried non-scrollable functionality when we open a popup form
-
-// body.no-scroll,
-// html.no-scroll {
-//   overflow: hidden !important;
-//   height: 100% !important;
-//   position: fixed !important;
-//   width: 100%;
-// }
 
 .backgroundBlur {
     position: fixed;

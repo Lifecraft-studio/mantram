@@ -161,6 +161,19 @@ h1{
     }
 }
 
-.container{
-    margin-bottom: 1rem ;
+.gallery-container{
+   
+    width: 80%;
+    max-width: 1420px;
+    margin: 3rem auto;
+    position: relative;
+
+    p{
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    @media (max-width : $bp-lg) {
+        width: 90%;
+    }
 }

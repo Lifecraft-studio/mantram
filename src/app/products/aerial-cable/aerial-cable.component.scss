@@ -47,28 +47,7 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.section-subheading{
+.section-subheading {
     padding: 2rem;
-}
-
-.pdf-section{
-    text-align: center;
-    p{
-        padding: 1rem;
-        font-size: 1.5rem;
-    }
-    .section-button{
-        justify-self: ceneter;
-        border-radius: 100px;
-        padding: 0.5rem;
-        border: 2px solid $primary;
-        background-color: $primary;
-        color: white;
-        cursor: pointer;
-
-        a{
-            color: white;
-        }
-    }
 }
 
