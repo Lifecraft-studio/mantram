@@ -1,68 +1,31 @@
 <div class="container">
     <h1>
-        Harnessing Solar Energy for a Sustainable Future
-    </h1><hr><br>
+        Unmatched Manufacturing Capacity Powered by Advanced Automation
+    </h1>
+    <hr><br>
     <p>
-        At Mantram Industries Private Limited, sustainability is at the core of our operations. As part of our
-        commitment to green energy, we have integrated solar power into our infrastructure to reduce our reliance on
-        conventional energy sources. By leveraging renewable energy, we are actively minimizing our carbon footprint and
-        promoting an eco-friendly manufacturing process.
+        Our manufacturing infrastructure stands as a benchmark in the cable industry, combining scale, technology, and
+        precision. We proudly operate one of the largest and most advanced production facilities for Multistrand Aerial
+        Bunched Cables, with a remarkable monthly capacity of 2,500 kilometers. Alongside this, our plant can produce
+        over 10,000 kilometers of conductors in a wide range of sizes every month, ensuring we can meet diverse and
+        large-scale requirements with ease.
     </p>
+    <br>
     <p>
-        Our solar power installations contribute to energy efficiency, helping us optimize production while reducing
-        environmental impact. This initiative aligns with our vision of a cleaner, greener future, ensuring that our
-        conductors and cables are manufactured with sustainability in mind.
+        What sets us apart is not just our volume—it’s our commitment to quality and efficiency. Our facility is
+        equipped with state-of-the-art, fully automated machinery that drives every stage of the production process,
+        from raw material handling to final testing. This high level of automation minimizes human error, increases
+        throughput, and ensures consistent quality across all product lines.
     </p>
+    <br>
     <p>
-        Through innovation and responsibility, we continue to invest in renewable energy solutions, making our
-        operations
-        more efficient and environmentally friendly. At Mantram Industries, we believe that powering industries should
-        go hand in hand with protecting the planet.
+        Our infrastructure is designed to support high-speed manufacturing while adhering to the strictest quality
+        control protocols. With integrated systems for real-time monitoring and precision testing, we deliver products
+        that meet international standards and perform reliably in the most demanding environments.
     </p>
-    <br><br>
-    <h1>
-        Alumnium Factory
-    </h1><hr><br>
+    <br>
     <p>
-        A key highlight of our infrastructure is our 100% aluminium sheet roofing, which is fully recyclable and
-        environmentally friendly. Aluminium is a durable and sustainable material that reduces environmental impact,
-        aligning with our vision for eco-friendly manufacturing. Additionally, we have integrated solar power into our
-        operations, further minimizing our reliance on non-renewable energy sources. By incorporating these green
-        initiatives, we are committed to building a sustainable and responsible future while maintaining excellence in
-        production.
+        Whether you're sourcing for a nationwide utility project or a specialized industrial application, our robust
+        manufacturing backbone ensures timely delivery, uncompromised quality, and total peace of mind.
     </p>
-</div>
-
-@if(showImage){
-<div class="backgroundBlur">
-    <div class="popupFormBackground">
-        <div #largeImage class="popupForm blackBackground">
-            <span class="class-btn" (click)="showImage = !showImage">&times;</span>
-            <div class="lightbox-container">
-                <img (click)="prevImage()" class="left-arrow-img" src="/assets/icons/left-arrow2.svg">
-                @if (!selectedImage) {
-                <div class="lightbox" (click)="closeImage()">
-                    <img [src]="images[currentIndex]" alt="Selected Image">
-                </div>
-                }@else{
-                <div class="lightbox" (click)="closeImage()">
-                    <img [src]="images[currentIndex]" alt="Selected Image">
-                </div>
-                }
-                <img (click)="nextImage()" class="right-arrow-img" src="/assets/icons/right-arrow2.svg">
-            </div>
-        </div>
-    </div>
-</div>
-}
-
-<div class="gallery-container">
-    <h1>Photo Gallery</h1><hr><br>
-    <div class="gallery">
-        @for (img of images; track $index) {
-        <div class="image">
-            <img [src]="img" alt="Gallery Image" (click)="openImage(img)">
-        </div>
-        }
-    </div>
 </div>

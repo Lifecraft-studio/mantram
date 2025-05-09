@@ -1,0 +1,29 @@
+<div class="gallery-section">
+  <div class="section-header">
+    <h1>Our Infrastructure Gallery</h1>
+    <p>Explore our state-of-the-art facilities and manufacturing processes</p>
+  </div>
+  
+  <div class="gallery-container">
+    <p-galleria [value]="images" 
+                [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{ 'max-width': '1420px', 'margin': '0 auto' }"
+                [showThumbnails]="true"
+                [showIndicators]="true"
+                [showItemNavigators]="true"
+                [autoPlay]="true"
+                [transitionInterval]="5000"
+                [circular]="true">
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item?.itemImageSrc || ''"
+             [alt]="item.alt" 
+             class="main-image" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <img [src]="item.thumbnailImageSrc" 
+             [alt]="item.alt" 
+             class="thumbnail-image" />
+      </ng-template>
+    </p-galleria>
+  </div>
+</div>

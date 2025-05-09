@@ -1,0 +1,119 @@
+@import "../../../public/assets/variables.scss";
+
+.gallery-section {
+    margin-top: 8rem;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        color: $primary;
+        font-size: clamp(1.5rem, 3vw, 3rem);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 800px;
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    }
+
+    .gallery-container {
+        width: 100%;
+        max-width: 1152px;
+        margin: 0 auto;
+
+        ::ng-deep .p-galleria {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+
+            .main-image {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+
+            .thumbnail-image {
+                width: 80px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 4px;
+                margin: 0 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+
+                &:hover {
+                    border-color: #3498db;
+                    transform: scale(1.05);
+                }
+            }
+
+            .p-galleria-thumbnail-container {
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 1rem;
+            }
+
+            .p-galleria-item-nav {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $bp-md) {
+    .gallery-container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .gallery-section{
+        margin-top: 90px;
+        padding: 1rem;
+    }
+
+    .main-image{
+        height: 250px !important;
+    }
+
+    .thumbnail-image {
+        width: 60px;
+        height: 45px;
+    }
+
+    .p-galleria-thumbnail-container {
+        padding: 0.5rem;
+    }
+}
+

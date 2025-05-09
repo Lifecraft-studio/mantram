@@ -5,11 +5,12 @@ import { TransmissionConductorComponent } from "./transmission-conductor/transmi
 import { AcsrComponent } from "./transmission-conductor/acsr/acsr.component";
 import { AaaComponent } from "./transmission-conductor/aaa/aaa.component";
 import { AaComponent } from "./transmission-conductor/aa/aa.component";
+import { FifthProductComponent } from './fifth-product/fifth-product.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, AerialCableComponent, TransmissionConductorComponent, AcsrComponent, AaaComponent, AaComponent],
+  imports: [RouterOutlet, RouterLink, AerialCableComponent, TransmissionConductorComponent, AcsrComponent, AaaComponent, AaComponent, FifthProductComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -21,7 +22,7 @@ export class ProductsComponent {
     {
       id: 'aerial',
       name: 'LT XLPE Aerial Bunched Cables',
-      img: 'assets/aerial-hero.jpg'
+      img: '/assets/lt-aerial-cable.jpeg'
     },
     // {
     //   id: 'transmission',
@@ -41,6 +42,11 @@ export class ProductsComponent {
     {
       id: 'aa',
       name: 'All Aluminium Conductors (AAC)',
+      img: 'assets/aluminium-hero.jpg'
+    },
+    {
+      id: 'fifth-product',
+      name: 'fifth product ',
       img: 'assets/aluminium-hero.jpg'
     }
   ]

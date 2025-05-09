@@ -21,6 +21,7 @@ import { NewspaperPublicationComponent } from './investors/newspaper-publication
 import { PoliciesAndCodesOfConductComponent } from './investors/policies-and-codes-of-conduct/policies-and-codes-of-conduct.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProductsComponent } from './products/products.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 export const routes: Routes = [
 
@@ -32,51 +33,51 @@ export const routes: Routes = [
     },
     {
         path: 'investors', component: InvestorsComponent,
-        children:[
+        children: [
             {
-                path: 'general-details', component:GeneralDetailsComponent
+                path: 'general-details', component: GeneralDetailsComponent
             },
             {
-                path: 'general-meeting-notice', component:GeneralMeetingNoticeComponent
+                path: 'general-meeting-notice', component: GeneralMeetingNoticeComponent
             },
             {
-                path: 'policies-and-codes-of-conduct', component:PoliciesAndCodesOfConductComponent
+                path: 'policies-and-codes-of-conduct', component: PoliciesAndCodesOfConductComponent
             },
             {
-                path: 'initial-public-offer', component:InitialPublicOfferComponent
+                path: 'initial-public-offer', component: InitialPublicOfferComponent
             },
             {
-                path: 'annual-report', component:AnnualReportComponent
+                path: 'annual-report', component: AnnualReportComponent
             },
             {
-                path: 'article-of-association', component:ArticleOfAssociationComponent
+                path: 'article-of-association', component: ArticleOfAssociationComponent
             },
             {
-                path: 'financial-information', component:FinancialInformationComponent
+                path: 'financial-information', component: FinancialInformationComponent
             },
             {
-                path: 'newspaper-publication', component:NewspaperPublicationComponent
+                path: 'newspaper-publication', component: NewspaperPublicationComponent
             },
             {
-                path: 'materiality-policy', component:MaterialityPolicyComponent
+                path: 'materiality-policy', component: MaterialityPolicyComponent
             },
             {
-                path: 'composition-of-board-and-committee', component:CompositionOfBoardAndCommitteeComponent
+                path: 'composition-of-board-and-committee', component: CompositionOfBoardAndCommitteeComponent
             },
             {
-                path: 'details-of-key-managerial-personnel', component:DetailsOfKeyManagerialPersonnelComponent
+                path: 'details-of-key-managerial-personnel', component: DetailsOfKeyManagerialPersonnelComponent
             },
             {
-                path: 'corporate-announcement', component:CorporateAnnouncementComponent
+                path: 'corporate-announcement', component: CorporateAnnouncementComponent
             },
             {
-                path: 'forms', component:FormsComponent
+                path: 'forms', component: FormsComponent
             },
             {
-                path: 'disclosure', component:DisclosureComponent
+                path: 'disclosure', component: DisclosureComponent
             },
             {
-                path: 'dividend', component:DividendComponent
+                path: 'dividend', component: DividendComponent
             },
         ]
     },
@@ -87,7 +88,10 @@ export const routes: Routes = [
         path: 'products/:id', component: ProductsComponent
     },
     {
-        path: 'products', redirectTo : 'products/aerial', pathMatch:'full'
+        path: 'products', redirectTo: 'products/aerial', pathMatch: 'full'
+    },
+    {
+        path: 'gallery', component: GalleryComponent
     },
     {
         path: 'contact', component: ContactComponent
