@@ -85,7 +85,7 @@
 
 
 .mission-container {
-  display: block;
+  display: flex;
   width: 100%;
   max-width: 1600px;
   margin: auto;
@@ -115,9 +115,16 @@
     }
   }
 
-  @media (max-width: $bp-sm) {
+  @media (max-width: $bp-md) {
+    display: block;
+  }
+
+  @media (max-width: $bp-lg) {
+    padding: 0;
+    gap: 1rem;
+
     .mission {
-      margin: 0px 0px 2rem 0px;;
+      margin: 0px 0px 2rem 0px;
     }
   }
 }
@@ -138,4 +145,8 @@
   @media (min-width : $bp-md) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+.section-content img {
+  box-shadow: #8b6cc8 0px 8px 24px;
 }
