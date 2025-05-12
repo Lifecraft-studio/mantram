@@ -10,7 +10,7 @@ header {
   left: 0;
   padding: 20px 0;
   z-index: 1;
-  color: $primary;
+  color: #fff;
 
   &.is-sticky {
     position: fixed;
@@ -83,7 +83,7 @@ header {
           left: 0;
           width: 0;
           height: 2px;
-          background-color: $primary;
+          background-color: #fff;
           transition: width 0.4s ease;
         }
 
