@@ -30,12 +30,7 @@ export class GalleryComponent {
       itemImageSrc: '/assets/infrastructure/gallery-image4.JPG',
       thumbnailImageSrc: '/assets/infrastructure/gallery-image4.JPG',
       alt: 'Image 4'
-    },
-    {
-      itemImageSrc: '/assets/infrastructure/gallery-image5.JPG',
-      thumbnailImageSrc: '/assets/infrastructure/gallery-image5.JPG',
-      alt: 'Image 5'
-    },
+    }
   ];
 
   responsiveOptions = [
