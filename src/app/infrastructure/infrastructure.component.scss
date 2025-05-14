@@ -16,9 +16,10 @@
     }
 
     .image-class {
-        max-height: 500px !important;
         width: 100% !important;
         margin: 2rem 0;
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
     }
 }
 
@@ -74,17 +75,24 @@
     border-radius: 1rem;
 
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
         margin: 0;
         color: $primary;
+
+        @media (max-width: $bp-md) {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: $bp-lg) {
+            font-size: 2.25rem;
+        }
+
     }
 
     .content {
-        display: grid;
-        flex-direction: row;
-        align-items: center;
+        text-align: center;
         margin: 1rem;
-        padding: 6rem;
+        padding: 5rem;
 
     }
 
@@ -103,7 +111,7 @@
 
 .detailed-section {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 33% 33% 29%;
     gap: 2rem;
 
     h1 {
@@ -111,20 +119,17 @@
     }
 
     .section-content {
-        .use-case-content {
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
+        max-width: 600px;
+        margin: auto;
 
-            img {
-                width: 200px;
-                height: 250px;
-                flex-shrink: 0;
-            }
+        img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
         }
     }
 
-    @media (max-width: $bp-md) {
+    @media (max-width: $bp-lg) {
         grid-template-columns: 1fr;
 
         .use-case-content {
