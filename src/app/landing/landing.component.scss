@@ -444,6 +444,16 @@
             padding: 0.5rem 1.25rem;
             gap: 1rem;
             font-size: 1.25rem;
+            border: 1px solid $primary;
+
+            &:hover{
+                background-color: $primary;
+                color: #fff;
+
+                .img-icon{
+                    filter: brightness(0) invert(1);
+                }
+            }
         }
 
         .img-icon {
