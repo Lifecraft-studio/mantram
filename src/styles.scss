@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Avenir LT';
-  src: url('../public/assets/fonts/avenir-lt-pro/AvenirLTProMediumOblique.otf') format('otf');
+  src: url(/assets/fonts/avenir-lt-pro/AvenirLTProHeavy.otf);
 }
 
 *,
@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    font-family: roboto;
+    font-family: 'Open Sans';
     background-color: lighten($secondary, 14%);
 }
 
@@ -50,7 +50,7 @@ select {
     font: inherit;
 }
 
-p,
+
 h1,
 h2,
 h3,
@@ -59,11 +59,12 @@ h5,
 h6 {
     overflow-wrap: break-word;
     margin: 0;
-    font-family: 'Avenir LT', sans-serif;
+    font-family: 'Avenir LT',;
 }
 
 p{
-    font-family: 'Open Sans';
+    overflow-wrap: break-word;
+    margin: 0;
 }
 
 #root,
