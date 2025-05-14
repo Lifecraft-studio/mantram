@@ -350,7 +350,13 @@
 
                 }
             }
+
+            @media (max-width:$bp-md) {
+                width: 100%;
+            }
         }
+
+        
     }
 
     &.show {

@@ -4,6 +4,12 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import '../public/assets/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+@font-face {
+  font-family: 'Avenir LT';
+  src: url('../public/assets/fonts/avenir-lt-pro/AvenirLTProMediumOblique.otf') format('otf');
+}
 
 *,
 *::before,
@@ -53,6 +59,11 @@ h5,
 h6 {
     overflow-wrap: break-word;
     margin: 0;
+    font-family: 'Avenir LT', sans-serif;
+}
+
+p{
+    font-family: 'Open Sans';
 }
 
 #root,
