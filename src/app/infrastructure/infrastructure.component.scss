@@ -112,15 +112,34 @@
     display: grid;
     grid-template-columns: 33% 33% 29%;
     gap: 2rem;
+    line-height: 1.2;
 
     h1 {
         color: $primary;
+        margin-bottom: 1rem;
     }
 
     .section-content {
 
         max-width: 600px;
         margin: 0;
+
+        .check-icon {
+            width: 15px;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .pointers {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+
+            p {
+                display: flex;
+                align-items: start;
+            }
+        }
 
         img {
             width: 100%;
