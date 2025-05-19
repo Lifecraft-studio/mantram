@@ -9,38 +9,5 @@ import { ImageModule } from 'primeng/image';
   styleUrl: './infrastructure.component.scss'
 })
 export class InfrastructureComponent {
-  images = Array.from({ length: 12 }, (_, i) => `/assets/infrastructure/image ${i + 1}.jpg`);
-  @ViewChild('largeImage') largeImage!: ElementRef;
-
-  selectedImage: string | null = null;
-  currentIndex: number = 0;
-  showImage:Boolean = false;
-
-  openImage(imageUrl: string) {
-    this.showImage = !this.showImage;
-    this.selectedImage = imageUrl;
-    this.currentIndex = this.images.indexOf(imageUrl);
-    this.largeImage.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  closeImage() {
-    this.selectedImage = null;
-  }
-
-  prevImage() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--; 
-    } else {
-      this.currentIndex = this.images.length - 1;
-    }
-  }
-  
-  nextImage() {
-    if (this.currentIndex < this.images.length - 1) {
-      this.currentIndex++;
-    } else {
-      this.currentIndex = 0; 
-    }
-  }
   
 }
