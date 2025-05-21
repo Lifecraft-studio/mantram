@@ -356,7 +356,7 @@
             }
         }
 
-        
+
     }
 
     &.show {
@@ -407,7 +407,6 @@
 }
 
 .contact {
-
     .contact-section {
         display: flex;
         background-color: rgba(#ae8eef, 0.1);
@@ -421,10 +420,11 @@
         border-radius: 1rem;
     }
 
-    h1{
+    h1 {
         font-size: 2rem;
         margin: 0;
     }
+
     p {
         margin-bottom: 2rem;
     }
@@ -446,11 +446,11 @@
             font-size: 1.25rem;
             border: 1px solid $primary;
 
-            &:hover{
+            &:hover {
                 background-color: $primary;
                 color: #fff;
 
-                .img-icon{
+                .img-icon {
                     filter: brightness(0) invert(1);
                 }
             }
@@ -487,44 +487,55 @@
 
     .group {
         position: relative;
-    }
 
-    input,
-    textarea {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        outline: none;
-        transition: border 0.3s ease-in-out;
-    }
+        .input-wrapper {
+            position: relative;
 
-    input:focus,
-    textarea:focus {
-        border-color: $primary;
-    }
+            input,
+            textarea {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                outline: none;
+                transition: border 0.3s ease-in-out;
+            }
 
-    label {
-        position: absolute;
-        top: 50%;
-        left: 12px;
-        transform: translateY(-50%);
-        font-size: 1rem;
-        color: #777;
-        transition: 0.3s ease-in-out;
-        pointer-events: none;
-    }
+            input:focus,
+            textarea:focus {
+                border-color: $primary;
+            }
 
-    input:focus+label,
-    textarea:focus+label,
-    input:not(:placeholder-shown)+label,
-    textarea:not(:placeholder-shown)+label {
-        top: 0;
-        left: 10px;
-        font-size: 14px;
-        color: $primary;
-        background-color: #fff;
+            label {
+                position: absolute;
+                top: 50%;
+                left: 12px;
+                transform: translateY(-50%);
+                font-size: 1rem;
+                color: #777;
+                transition: 0.3s ease-in-out;
+                pointer-events: none;
+                background: white;
+                padding: 0 5px;
+            }
+
+            input:focus+label,
+            textarea:focus+label,
+            input:not(:placeholder-shown)+label,
+            textarea:not(:placeholder-shown)+label {
+                top: 0;
+                left: 10px;
+                font-size: 14px;
+                color: $primary;
+            }
+        }
+
+        .error-msg {
+            color: red;
+            font-size: 12px;
+            margin-top: 4px;
+        }
     }
 
     .contact-footer {
@@ -568,14 +579,11 @@
         display: none;
     }
 
-    /* Responsive */
     @media (max-width: $bp-md) {
         .wrap-container {
             flex-direction: column;
         }
-    }
 
-    @media (max-width: $bp-md) {
         .contact-section {
             flex-direction: column;
             align-items: center;
@@ -594,12 +602,10 @@
             button {
                 margin: auto;
                 padding: 0.5rem 1.25rem;
-                gap:0.25rem;
+                gap: 0.25rem;
             }
         }
     }
-
-
 }
 
 .backgroundBlur {
@@ -618,8 +624,6 @@
         position: fixed;
         top: 50%;
         left: 50%;
-        height: auto;
-        width: auto;
         transform: translate(-50%, -50%);
         display: flex;
         justify-content: center;
@@ -631,10 +635,10 @@
 
             span {
                 color: grey;
-            }
 
-            span:hover {
-                color: black;
+                &:hover {
+                    color: black;
+                }
             }
         }
 
@@ -642,11 +646,11 @@
             background-color: black;
 
             span {
-                color: #aaaa;
-            }
+                color: #aaa;
 
-            span:hover {
-                color: white;
+                &:hover {
+                    color: white;
+                }
             }
         }
 
@@ -663,16 +667,22 @@
             display: inline;
             font-size: x-large;
             font-weight: bold;
-        }
 
-        .class-btn:hover {
-            cursor: pointer;
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         span {
             cursor: pointer;
             position: relative;
-            left: 95%
+            left: 95%;
+        }
+
+        .error-msg {
+            color: red;
+            font-size: 12px;
+            margin-top: 4px;
         }
     }
 }

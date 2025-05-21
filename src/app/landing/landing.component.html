@@ -120,7 +120,6 @@
   </div>
 </section>
 
-
 <section class="solar-energy-section section">
   <div class="container">
     <h1 class="section-heading">Initiatives taken for Sustainable Future</h1>
@@ -170,7 +169,6 @@
   </div>
 </section>
 
-
 <section class="container section">
   <h2 class="section-heading">Our Certificates</h2>
   <div class="section-content certificate">
@@ -199,57 +197,78 @@
 <section class="contact-section section">
   <div class="contact container">
     <p class="section-heading">Quick Enquiry</p>
+
     <div class="contact-section">
-      <img src="/assets/contactus-landing.svg">
+      <img src="/assets/contactus-landing.svg" />
       <div class="contact-content">
         <h1>Get in Touch with Mantram Industries</h1>
         <p class="section-content">
           Have questions or need assistance? Feel free to reach out. We're here to help and connect with you.
         </p>
-        <button class="button-class" type="button" (click)="showContactForm = !showContactForm">Contact Us <img
-            class="img-icon" src="/assets/icons/arrow.svg"></button>
+        <button class="button-class" type="button" (click)="showContactForm = !showContactForm">
+          Contact Us
+          <img class="img-icon" src="/assets/icons/arrow.svg" />
+        </button>
       </div>
     </div>
-    @if(showContactForm){
-    <!-- using backgroundBlur div for making the entire viewport black with some opacity when we open form -->
+
+    @if (showContactForm) {
     <div class="backgroundBlur">
-      <!-- popupFormBackground div creates a background which creates a center poistion of the div in the screen size -->
       <div class="popupFormBackground">
-        <!-- popupForm contains the element which needs to be displaced in popup -->
-        <!-- using whiteBackground for showing different background colors for different elements -->
         <div class="popupForm whiteBackground">
           <span class="class-btn" (click)="showContactForm = !showContactForm">&times;</span>
-          <form class="w-100">
+
+          <form class="w-100" (ngSubmit)="onSubmit(form)" #form="ngForm">
             <div class="form-fields">
               <h1 class="contactHeading">Contact Us</h1>
+
               <div class="w-100 group">
-                <input type="text" id="name" required class="w-100" formControlName="name" placeholder="" />
-                <label for="name" class="form-label">Name</label>
+                <div class="input-wrapper">
+                  <input type="text" id="name" name="name" placeholder=" " [(ngModel)]="formData.name" required
+                    #nameRef="ngModel" />
+                  <label for="name">Name</label>
+                </div>
+                @if(nameRef.invalid && nameRef.touched){
+                <div class="error-msg">Name is required</div>
+                }
               </div>
+
               <div class="w-100 group">
-                <input type="number" name="contact" id="contact" required class="w-100" formControlName="contact"
-                  placeholder="" />
-                <label for="contact" class="form-label">Contact</label>
+                <div class="input-wrapper">
+                  <input type="tel" id="contact" name="contact" placeholder=" " [(ngModel)]="formData.contact"
+                    pattern="[0-9]{10}" required #contactRef="ngModel" />
+                  <label for="contact">Contact</label>
+                </div>
+                @if(contactRef.invalid && contactRef.touched){
+                <div class="error-msg">Enter a valid 10-digit number</div>
+                }
               </div>
+
               <div class="w-100 group">
-                <input type="email" id="email" required class="w-100" formControlName="email" placeholder="" />
-                <label for="email" class="form-label">Email</label>
+                <div class="input-wrapper">
+                  <input type="email" id="email" name="email" placeholder=" " [(ngModel)]="formData.email" required
+                    email #emailRef="ngModel" />
+                  <label for="email">Email</label>
+                </div>
+                @if(emailRef.invalid && emailRef.touched){
+                <div class="error-msg">Enter a valid email</div>
+                }
               </div>
+
               <div class="w-100 group">
-                <textarea name="message" id="message" cols="30" rows="2" class="w-100" required
-                  formControlName="message" placeholder=""></textarea>
-                <label for="message" class="form-label">Message</label>
+                <div class="input-wrapper">
+                  <textarea id="message" name="message" placeholder=" " rows="2" [(ngModel)]="formData.message" required
+                    #messageRef="ngModel"></textarea>
+                  <label for="message">Message</label>
+                </div>
+                @if(messageRef.invalid && messageRef.touched){
+                <div class="error-msg">Message is required</div>
+                }
               </div>
             </div>
-            <!-- <p class="text-danger m-0 text-small" *ngIf="contactForm.invalid && contactForm.touched">Please enter valid
-                          details!!
-                      </p> -->
+
             <div class="contact-footer">
-              <!-- <div class="alert alert-dismissible fade show" role="alert" [ngClass]="'alert-'+request.msg[0].severity"
-                        *ngIf="request.msg.length">
-                        {{request.msg[0].summary}}
-                      </div> -->
-              <button class="submit-btn" type="submit">
+              <button class="submit-btn" type="submit" [disabled]="form.invalid">
                 <div class="spinner-border" role="status"></div>
                 Enquire
               </button>

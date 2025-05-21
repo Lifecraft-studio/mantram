@@ -31,28 +31,62 @@
             </div>
         </div>
 
-        <form class="contact-form">
-            <h1>Contact Us</h1>
-            <div class="form-group">
-                <input type="text" id="name" required placeholder=" " />
-                <label for="name">Name</label>
+        <form class="w-100" (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="form-fields">
+                <h1 class="contactHeading">Contact Us</h1>
+
+                <div class="w-100 group">
+                    <div class="input-wrapper">
+                        <input type="text" id="name" name="name" placeholder=" " [(ngModel)]="formData.name" required
+                            #nameRef="ngModel" />
+                        <label for="name">Name</label>
+                    </div>
+                    @if(nameRef.invalid && nameRef.touched){
+                    <div class="error-msg">Name is required</div>
+                    }
+                </div>
+
+                <div class="w-100 group">
+                    <div class="input-wrapper">
+                        <input type="tel" id="contact" name="contact" placeholder=" " [(ngModel)]="formData.contact"
+                            pattern="[0-9]{10}" required #contactRef="ngModel" />
+                        <label for="contact">Contact</label>
+                    </div>
+                    @if(contactRef.invalid && contactRef.touched){
+                    <div class="error-msg">Enter a valid 10-digit number</div>
+                    }
+                </div>
+
+                <div class="w-100 group">
+                    <div class="input-wrapper">
+                        <input type="email" id="email" name="email" placeholder=" " [(ngModel)]="formData.email"
+                            required email #emailRef="ngModel" />
+                        <label for="email">Email</label>
+                    </div>
+                    @if(emailRef.invalid && emailRef.touched){
+                    <div class="error-msg">Enter a valid email</div>
+                    }
+                </div>
+
+                <div class="w-100 group">
+                    <div class="input-wrapper">
+                        <textarea id="message" name="message" placeholder=" " rows="2" [(ngModel)]="formData.message"
+                            required #messageRef="ngModel"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    @if(messageRef.invalid && messageRef.touched){
+                    <div class="error-msg">Message is required</div>
+                    }
+                </div>
             </div>
-            <div class="form-group">
-                <input type="number" id="contact" required placeholder=" " />
-                <label for="contact">Contact</label>
+
+            <div class="contact-footer">
+                <button class="submit-btn" type="submit" [disabled]="form.invalid">
+                    <div class="spinner-border" role="status"></div>
+                    Enquire
+                </button>
             </div>
-            <div class="form-group">
-                <input type="email" id="email" required placeholder=" " />
-                <label for="email">Email</label>
-            </div>
-            <div class="form-group">
-                <textarea id="message" rows="3" required placeholder=" "></textarea>
-                <label for="message">Message</label>
-            </div>
-            <button type="submit" class="submit-btn">
-                <div class="spinner-border" role="status"></div>
-                Enquire
-            </button>
         </form>
+
     </section>
 </div>

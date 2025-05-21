@@ -1,10 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, CommonModule, FormsModule, HttpClientModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
@@ -17,7 +20,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   showContactForm: Boolean = false;
   showVideoPopup: boolean = false;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.router.events.subscribe(event => {
@@ -67,4 +70,28 @@ export class LandingComponent implements OnInit, AfterViewInit {
     // }
   }
 
+  formData = {
+    name: '',
+    contact: '',
+    email: '',
+    message: ''
+  };
+
+  onSubmit(form: NgForm) {
+    this.http.post('http://localhost:8000/phpmailer.php', this.formData).subscribe(
+      (res: any) => {
+        form.resetForm();
+        this.formData = {
+          name: '',
+          contact: '',
+          email: '',
+          message: ''
+        };
+        this.showContactForm = false;
+      },
+      (err) => {
+        console.error('Error:', err);
+      }
+    );
+  }
 }
